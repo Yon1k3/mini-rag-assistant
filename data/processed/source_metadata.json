@@ -1,0 +1,430 @@
+[
+  {
+    "original_url": "https://fastapi.tiangolo.com/",
+    "document_source": "FastAPI",
+    "document_type": "html",
+    "local_path": "data/raw/html/fastapi-home.html",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://fastapi.tiangolo.com/tutorial/dependencies/",
+    "document_source": "FastAPI",
+    "document_type": "html",
+    "local_path": "data/raw/html/fastapi-html-dependencies.html",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://fastapi.tiangolo.com/deployment/",
+    "document_source": "FastAPI",
+    "document_type": "html",
+    "local_path": "data/raw/html/fastapi-html-deployment.html",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://fastapi.tiangolo.com/tutorial/first-steps/",
+    "document_source": "FastAPI",
+    "document_type": "html",
+    "local_path": "data/raw/html/fastapi-html-first-steps.html",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://fastapi.tiangolo.com/tutorial/security/first-steps/",
+    "document_source": "FastAPI",
+    "document_type": "html",
+    "local_path": "data/raw/html/fastapi-html-security.html",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/agents",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-agents.html",
+    "download_timestamp": "2026-06-24T12:29:19+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/overview",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-overview.html",
+    "download_timestamp": "2026-06-24T12:29:19+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/runtime",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-runtime.html",
+    "download_timestamp": "2026-06-24T12:29:21+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/short-term-memory",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-short-term-memory.html",
+    "download_timestamp": "2026-06-24T12:29:20+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/structured-output",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-structured-output.html",
+    "download_timestamp": "2026-06-24T12:29:20+00:00"
+  },
+  {
+    "original_url": "https://docs.langchain.com/oss/python/langchain/tools",
+    "document_source": "LangChain",
+    "document_type": "html",
+    "local_path": "data/raw/html/langchain-tools.html",
+    "download_timestamp": "2026-06-24T12:29:20+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-home.html",
+    "download_timestamp": "2026-06-24T12:29:18+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/concepts/fields/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-html-fields.html",
+    "download_timestamp": "2026-06-24T12:29:18+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/concepts/json_schema/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-html-json-schema.html",
+    "download_timestamp": "2026-06-24T12:29:19+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/concepts/models/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-html-models.html",
+    "download_timestamp": "2026-06-24T12:29:18+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/concepts/serialization/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-html-serialization.html",
+    "download_timestamp": "2026-06-24T12:29:19+00:00"
+  },
+  {
+    "original_url": "https://docs.pydantic.dev/latest/concepts/validators/",
+    "document_source": "Pydantic",
+    "document_type": "html",
+    "local_path": "data/raw/html/pydantic-html-validators.html",
+    "download_timestamp": "2026-06-24T12:29:18+00:00"
+  },
+  {
+    "original_url": "https://docs.python.org/3/howto/index.html",
+    "document_source": "Python",
+    "document_type": "html",
+    "local_path": "data/raw/html/python-howto.html",
+    "download_timestamp": "2026-06-24T12:29:21+00:00"
+  },
+  {
+    "original_url": "https://docs.python.org/3/library/index.html",
+    "document_source": "Python",
+    "document_type": "html",
+    "local_path": "data/raw/html/python-library.html",
+    "download_timestamp": "2026-06-24T12:29:21+00:00"
+  },
+  {
+    "original_url": "https://docs.python.org/3/tutorial/index.html",
+    "document_source": "Python",
+    "document_type": "html",
+    "local_path": "data/raw/html/python-tutorial.html",
+    "download_timestamp": "2026-06-24T12:29:21+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body-fields.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-body-fields.md",
+    "download_timestamp": "2026-06-24T12:29:11+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-dependencies.md",
+    "download_timestamp": "2026-06-24T12:29:12+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/deployment/index.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-deployment.md",
+    "download_timestamp": "2026-06-24T12:29:13+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/first-steps.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-first-steps.md",
+    "download_timestamp": "2026-06-24T12:29:09+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/handling-errors.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-handling-errors.md",
+    "download_timestamp": "2026-06-24T12:29:11+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/index.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-index.md",
+    "download_timestamp": "2026-06-24T12:29:09+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/middleware.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-middleware.md",
+    "download_timestamp": "2026-06-24T12:29:13+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/path-params.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-path-params.md",
+    "download_timestamp": "2026-06-24T12:29:10+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-query-params.md",
+    "download_timestamp": "2026-06-24T12:29:10+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-request-body.md",
+    "download_timestamp": "2026-06-24T12:29:10+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-request-files.md",
+    "download_timestamp": "2026-06-24T12:29:11+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-forms.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-request-forms.md",
+    "download_timestamp": "2026-06-24T12:29:11+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/security/first-steps.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-security-first-steps.md",
+    "download_timestamp": "2026-06-24T12:29:12+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/sql-databases.md",
+    "document_source": "FastAPI",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/fastapi-sql-databases.md",
+    "download_timestamp": "2026-06-24T12:29:12+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/config.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-config.md",
+    "download_timestamp": "2026-06-24T12:29:15+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/dataclasses.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-dataclasses.md",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-fields.md",
+    "download_timestamp": "2026-06-24T12:29:14+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/index.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-index.md",
+    "download_timestamp": "2026-06-24T12:29:13+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-json-schema.md",
+    "download_timestamp": "2026-06-24T12:29:15+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/models.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-models.md",
+    "download_timestamp": "2026-06-24T12:29:14+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/performance.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-performance.md",
+    "download_timestamp": "2026-06-24T12:29:17+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-serialization.md",
+    "download_timestamp": "2026-06-24T12:29:14+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/strict_mode.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-strict-mode.md",
+    "download_timestamp": "2026-06-24T12:29:15+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/types.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-types.md",
+    "download_timestamp": "2026-06-24T12:29:16+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/unions.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-unions.md",
+    "download_timestamp": "2026-06-24T12:29:16+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
+    "document_source": "Pydantic",
+    "document_type": "markdown",
+    "local_path": "data/raw/markdown/pydantic-validators.md",
+    "download_timestamp": "2026-06-24T12:29:14+00:00"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-01-c-api.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/c-api.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-02-extending.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/extending.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-03-faq.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/faq.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-04-howto-a-conceptual-overview-of-asyncio.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/howto-a-conceptual-overview-of-asyncio.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-05-howto-annotations.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/howto-annotations.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-06-howto-argparse-optparse.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/howto-argparse-optparse.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-07-howto-argparse.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/howto-argparse.pdf"
+  },
+  {
+    "original_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+    "document_source": "Python",
+    "document_type": "pdf",
+    "local_path": "data/raw/pdf/python-docs-08-howto-clinic.pdf",
+    "download_timestamp": "2026-06-24T12:29:25+00:00",
+    "archive_member": "docs-pdf/howto-clinic.pdf"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/classes.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-classes.txt",
+    "download_timestamp": "2026-06-24T12:29:23+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/controlflow.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-controlflow.txt",
+    "download_timestamp": "2026-06-24T12:29:22+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/datastructures.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-datastructures.txt",
+    "download_timestamp": "2026-06-24T12:29:23+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/introduction.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-introduction.txt",
+    "download_timestamp": "2026-06-24T12:29:22+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/modules.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-modules.txt",
+    "download_timestamp": "2026-06-24T12:29:23+00:00"
+  },
+  {
+    "original_url": "https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/stdlib.rst",
+    "document_source": "Python",
+    "document_type": "txt",
+    "local_path": "data/raw/txt/python-tutorial-stdlib.txt",
+    "download_timestamp": "2026-06-24T12:29:23+00:00"
+  }
+]

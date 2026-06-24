@@ -1,0 +1,17 @@
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-chroma
+langchain-ollama
+langchain-huggingface
+chromadb
+sentence-transformers
+rank-bm25
+pypdf
+beautifulsoup4
+streamlit
+fastapi
+uvicorn
+notebook

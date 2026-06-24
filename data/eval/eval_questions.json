@@ -1,0 +1,283 @@
+[
+  {
+    "id": "q001",
+    "question": "What is FastAPI used for?",
+    "expected_answer": "FastAPI is used for building APIs with Python.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/fastapi-index.md",
+        "document_source": "FastAPI",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["FastAPI", "API", "Python"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q002",
+    "question": "How do you declare path parameters in FastAPI?",
+    "expected_answer": "Path parameters are declared in the path operation function and matched from the URL path.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/fastapi-path-params.md",
+        "document_source": "FastAPI",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["path", "parameters", "FastAPI"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q003",
+    "question": "What are query parameters in FastAPI?",
+    "expected_answer": "Query parameters are function parameters that are not part of the path and are read from the query string.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/fastapi-query-params.md",
+        "document_source": "FastAPI",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["query", "parameters", "function"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q004",
+    "question": "How does FastAPI use Pydantic models for request bodies?",
+    "expected_answer": "FastAPI uses Pydantic models to declare, validate, and document request bodies.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/fastapi-request-body.md",
+        "document_source": "FastAPI",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["Pydantic", "request", "body", "validate"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q005",
+    "question": "What are dependencies in FastAPI?",
+    "expected_answer": "Dependencies are reusable components declared for path operations, often used for shared logic such as authentication or database access.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/fastapi-dependencies.md",
+        "document_source": "FastAPI",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["dependencies", "FastAPI", "reusable"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q006",
+    "question": "What is a Pydantic model?",
+    "expected_answer": "A Pydantic model defines fields and validates data using Python type annotations.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/pydantic-models.md",
+        "document_source": "Pydantic",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["Pydantic", "model", "fields", "validation"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q007",
+    "question": "What are Pydantic field defaults used for?",
+    "expected_answer": "Field defaults define values used when input data does not provide a value for a field.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/pydantic-fields.md",
+        "document_source": "Pydantic",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["field", "default", "Pydantic"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q008",
+    "question": "What are Pydantic validators used for?",
+    "expected_answer": "Validators customize validation logic for model fields or model data.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/pydantic-validators.md",
+        "document_source": "Pydantic",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["validators", "validation", "Pydantic"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q009",
+    "question": "What does Pydantic serialization do?",
+    "expected_answer": "Serialization converts Pydantic models into Python or JSON-compatible output.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/pydantic-serialization.md",
+        "document_source": "Pydantic",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["serialization", "JSON", "model"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q010",
+    "question": "What is JSON Schema used for in Pydantic?",
+    "expected_answer": "JSON Schema describes model structure and validation constraints in a machine-readable schema.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/markdown/pydantic-json-schema.md",
+        "document_source": "Pydantic",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["JSON Schema", "schema", "validation"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q011",
+    "question": "What is LangChain used for?",
+    "expected_answer": "LangChain is used to build applications powered by language models.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/langchain-overview.html",
+        "document_source": "LangChain",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["LangChain", "language", "applications"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q012",
+    "question": "What are agents in LangChain?",
+    "expected_answer": "Agents use a language model to decide which actions or tools to call.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/langchain-agents.html",
+        "document_source": "LangChain",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["agents", "tools", "actions"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q013",
+    "question": "What are tools in LangChain agents?",
+    "expected_answer": "Tools are callable capabilities that agents can use to interact with external systems or functions.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/langchain-tools.html",
+        "document_source": "LangChain",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["tools", "agents", "call"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q014",
+    "question": "What is structured output in LangChain?",
+    "expected_answer": "Structured output asks a model to return data matching a defined schema.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/langchain-structured-output.html",
+        "document_source": "LangChain",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["structured", "output", "schema"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q015",
+    "question": "What is short-term memory in LangChain?",
+    "expected_answer": "Short-term memory keeps conversation or agent state available during an interaction.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/langchain-short-term-memory.html",
+        "document_source": "LangChain",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["short-term", "memory", "state"],
+    "difficulty": "hard"
+  },
+  {
+    "id": "q016",
+    "question": "What does the Python tutorial cover?",
+    "expected_answer": "The Python tutorial introduces Python concepts and language features.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/html/python-tutorial.html",
+        "document_source": "Python",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["Python", "tutorial", "language"],
+    "difficulty": "easy"
+  },
+  {
+    "id": "q017",
+    "question": "What are Python control flow tools?",
+    "expected_answer": "Control flow tools include statements such as if, for, range, break, continue, and match.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/txt/python-tutorial-controlflow.txt",
+        "document_source": "Python",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["if", "for", "range", "control"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q018",
+    "question": "What are Python lists used for?",
+    "expected_answer": "Lists are mutable sequence data structures used to store ordered collections.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/txt/python-tutorial-datastructures.txt",
+        "document_source": "Python",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["lists", "sequence", "data"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q019",
+    "question": "How are Python modules used?",
+    "expected_answer": "Modules organize Python definitions and statements into reusable files that can be imported.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/txt/python-tutorial-modules.txt",
+        "document_source": "Python",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["modules", "import", "Python"],
+    "difficulty": "medium"
+  },
+  {
+    "id": "q020",
+    "question": "What are Python classes used for?",
+    "expected_answer": "Classes define new object types and support object-oriented programming.",
+    "expected_sources": [
+      {
+        "source_file": "data/raw/txt/python-tutorial-classes.txt",
+        "document_source": "Python",
+        "page_number": null
+      }
+    ],
+    "expected_keywords": ["classes", "object", "Python"],
+    "difficulty": "hard"
+  }
+]
+
