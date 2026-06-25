@@ -60,6 +60,7 @@ def evaluate_one(question: dict[str, Any], settings: Settings) -> dict[str, Any]
         question["question"],
         metadata_filter=metadata_filter or None,
         settings=settings,
+        thread_id=f"eval-{question['id']}",
     )
     retrieved_context = result.get("retrieved_context", [])
     source_recall = source_recall_at_k(

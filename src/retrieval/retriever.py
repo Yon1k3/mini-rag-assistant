@@ -53,7 +53,6 @@ def looks_like_network_error(exc: Exception) -> bool:
 
 @lru_cache(maxsize=1)
 def load_vectorstore(settings: Settings | None = None) -> Any:
-    # Vectorstore теж кешується в межах процесу: це прискорює eval і Streamlit.
     settings = settings or get_settings()
     if settings.vector_db != "chroma":
         raise ValueError("Only Chroma is supported by this mini project.")

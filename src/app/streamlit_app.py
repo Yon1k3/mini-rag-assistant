@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import sys
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +23,8 @@ def main() -> None:
 
     settings = get_settings()
     options = available_filter_options(settings)
+    if "thread_id" not in st.session_state:
+        st.session_state.thread_id = f"streamlit-{uuid.uuid4().hex}"
 
     with st.sidebar:
         st.subheader("Metadata filters")
@@ -43,6 +46,7 @@ def main() -> None:
                 question.strip(),
                 metadata_filter=metadata_filter,
                 settings=settings,
+                thread_id=st.session_state.thread_id,
             )
 
         if not result["retrieved_context"]:

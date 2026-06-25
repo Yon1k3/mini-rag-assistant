@@ -23,7 +23,6 @@ def hybrid_search(
     final_k = top_k or settings.top_k
     candidate_k = max(final_k * 4, 10)
 
-    # Hybrid retrieval бере і semantic dense search, і keyword BM25 search.
     dense_results = similarity_search(
         query,
         settings=settings,

@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import time
-from typing import Any
+from functools import lru_cache
+from typing import Annotated, Any, TypedDict
 
+from langchain_core.messages import AIMessage, BaseMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import END, START, StateGraph
+from langgraph.graph.message import add_messages
 
 from answering.llm import get_chat_model
 from answering.prompts import RAG_HUMAN_PROMPT, SYSTEM_PROMPT
@@ -13,69 +18,167 @@ from retrieval.retriever import PIPELINE_NAME, RetrievedChunk, timed_retrieve
 
 
 DONT_KNOW = "I don't know based on the provided context."
+DEFAULT_THREAD_ID = "mini-rag-default"
+
+
+class RagState(TypedDict, total=False):
+    question: str
+    metadata_filter: dict[str, Any] | None
+    messages: Annotated[list[BaseMessage], add_messages]
+    retrieved_context: list[RetrievedChunk]
+    retrieval_latency_seconds: float
+    context: str
+    sources: list[dict[str, Any]]
+    answer_text: str
+    answer: str
+    start_time: float
+    latency_seconds: float
+    retrieval_pipeline: str
+    failure_reason: str
 
 
 def answer_question(
     question: str,
     metadata_filter: dict[str, Any] | None = None,
     settings: Settings | None = None,
+    thread_id: str | None = None,
 ) -> dict[str, Any]:
     settings = settings or get_settings()
-    start = time.perf_counter()
-    failure_reason = ""
+    graph = get_rag_graph(settings)
+    safe_thread_id = thread_id or DEFAULT_THREAD_ID
 
-    try:
-        retrieved_chunks, retrieval_latency = timed_retrieve(
-            question,
-            settings=settings,
-            metadata_filter=metadata_filter,
-        )
-    except Exception as exc:
-        retrieved_chunks = []
-        retrieval_latency = 0.0
-        failure_reason = f"retrieval_error: {exc}"
+    state = graph.invoke(
+        {
+            "question": question,
+            "metadata_filter": metadata_filter,
+            "messages": [HumanMessage(content=question)],
+        },
+        config={"configurable": {"thread_id": safe_thread_id}},
+    )
 
-    if not retrieved_chunks:
-        latency = time.perf_counter() - start
+    return {
+        "answer": state.get("answer", format_final_answer(DONT_KNOW, [])),
+        "answer_text": state.get("answer_text", DONT_KNOW),
+        "sources": state.get("sources", []),
+        "retrieved_context": state.get("retrieved_context", []),
+        "latency_seconds": state.get("latency_seconds", 0.0),
+        "retrieval_latency_seconds": state.get("retrieval_latency_seconds", 0.0),
+        "retrieval_pipeline": state.get("retrieval_pipeline", PIPELINE_NAME),
+        "failure_reason": state.get("failure_reason", ""),
+        "thread_id": safe_thread_id,
+    }
+
+
+@lru_cache(maxsize=4)
+def get_rag_graph(settings: Settings) -> Any:
+    workflow = StateGraph(RagState)
+
+    def initialize_state(state: RagState) -> dict[str, Any]:
         return {
-            "answer": format_final_answer(DONT_KNOW, []),
-            "answer_text": DONT_KNOW,
-            "sources": [],
-            "retrieved_context": [],
-            "latency_seconds": latency,
-            "retrieval_latency_seconds": retrieval_latency,
+            "start_time": time.perf_counter(),
+            "failure_reason": "",
             "retrieval_pipeline": PIPELINE_NAME,
-            "failure_reason": failure_reason or "no_context",
         }
 
-    context = build_context(retrieved_chunks)
-    sources = collect_sources(retrieved_chunks)
+    def retrieve_context(state: RagState) -> dict[str, Any]:
+        try:
+            chunks, retrieval_latency = timed_retrieve(
+                state["question"],
+                settings=settings,
+                metadata_filter=state.get("metadata_filter"),
+            )
+            return {
+                "retrieved_context": chunks,
+                "retrieval_latency_seconds": retrieval_latency,
+            }
+        except Exception as exc:
+            return {
+                "retrieved_context": [],
+                "retrieval_latency_seconds": 0.0,
+                "failure_reason": f"retrieval_error: {exc}",
+            }
 
-    try:
-        prompt = ChatPromptTemplate.from_messages(
-            [("system", SYSTEM_PROMPT), ("human", RAG_HUMAN_PROMPT)]
-        )
-        chain = prompt | get_chat_model(settings) | StrOutputParser()
-        raw_answer = chain.invoke({"question": question, "context": context})
-        answer_text = extract_answer_text(raw_answer)
-    except Exception as exc:
-        answer_text = DONT_KNOW
-        failure_reason = failure_reason or f"llm_error: {exc}"
+    def route_after_retrieval(state: RagState) -> str:
+        return "prepare_context" if state.get("retrieved_context") else "finalize_response"
 
+    def prepare_context(state: RagState) -> dict[str, Any]:
+        chunks = state.get("retrieved_context", [])
+        return {
+            "context": build_context(chunks),
+            "sources": collect_sources(chunks),
+        }
+
+    def generate_answer(state: RagState) -> dict[str, Any]:
+        try:
+            prompt = ChatPromptTemplate.from_messages(
+                [("system", SYSTEM_PROMPT), ("human", RAG_HUMAN_PROMPT)]
+            )
+            chain = prompt | get_chat_model(settings) | StrOutputParser()
+            raw_answer = chain.invoke(
+                {
+                    "question": state["question"],
+                    "context": state.get("context", ""),
+                }
+            )
+            answer_text = normalize_answer_text(extract_answer_text(raw_answer))
+            return {
+                "answer_text": answer_text,
+                "messages": [AIMessage(content=answer_text)],
+            }
+        except Exception as exc:
+            return {
+                "answer_text": DONT_KNOW,
+                "failure_reason": state.get("failure_reason") or f"llm_error: {exc}",
+                "messages": [AIMessage(content=DONT_KNOW)],
+            }
+
+    def finalize_response(state: RagState) -> dict[str, Any]:
+        sources = state.get("sources", [])
+        answer_text = normalize_answer_text(state.get("answer_text", ""))
+        failure_reason = state.get("failure_reason", "")
+
+        if not state.get("retrieved_context"):
+            answer_text = DONT_KNOW
+            sources = []
+            failure_reason = failure_reason or "no_context"
+
+        latency = time.perf_counter() - state.get("start_time", time.perf_counter())
+        return {
+            "answer": format_final_answer(answer_text, sources),
+            "answer_text": answer_text,
+            "sources": sources,
+            "latency_seconds": latency,
+            "retrieval_pipeline": PIPELINE_NAME,
+            "failure_reason": failure_reason,
+        }
+
+    workflow.add_node("initialize_state", initialize_state)
+    workflow.add_node("retrieve_context", retrieve_context)
+    workflow.add_node("prepare_context", prepare_context)
+    workflow.add_node("generate_answer", generate_answer)
+    workflow.add_node("finalize_response", finalize_response)
+
+    workflow.add_edge(START, "initialize_state")
+    workflow.add_edge("initialize_state", "retrieve_context")
+    workflow.add_conditional_edges(
+        "retrieve_context",
+        route_after_retrieval,
+        {
+            "prepare_context": "prepare_context",
+            "finalize_response": "finalize_response",
+        },
+    )
+    workflow.add_edge("prepare_context", "generate_answer")
+    workflow.add_edge("generate_answer", "finalize_response")
+    workflow.add_edge("finalize_response", END)
+
+    return workflow.compile(checkpointer=MemorySaver())
+
+
+def normalize_answer_text(answer_text: str) -> str:
     if not answer_text or DONT_KNOW.lower() in answer_text.lower():
-        answer_text = DONT_KNOW
-
-    latency = time.perf_counter() - start
-    return {
-        "answer": format_final_answer(answer_text, sources),
-        "answer_text": answer_text,
-        "sources": sources,
-        "retrieved_context": retrieved_chunks,
-        "latency_seconds": latency,
-        "retrieval_latency_seconds": retrieval_latency,
-        "retrieval_pipeline": PIPELINE_NAME,
-        "failure_reason": failure_reason,
-    }
+        return DONT_KNOW
+    return answer_text
 
 
 def build_context(chunks: list[RetrievedChunk]) -> str:

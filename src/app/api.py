@@ -22,6 +22,7 @@ app = FastAPI(title="Mini RAG Assistant API", version="1.0.0")
 class AskRequest(BaseModel):
     question: str = Field(min_length=1)
     metadata_filter: dict[str, Any] | None = None
+    thread_id: str | None = None
 
 
 class AskResponse(BaseModel):
@@ -33,6 +34,7 @@ class AskResponse(BaseModel):
     retrieval_latency_seconds: float
     retrieval_pipeline: str
     failure_reason: str
+    thread_id: str
 
 
 @app.post("/ask", response_model=AskResponse)
@@ -42,5 +44,6 @@ def ask(request: AskRequest) -> AskResponse:
         request.question.strip(),
         metadata_filter=request.metadata_filter,
         settings=settings,
+        thread_id=request.thread_id,
     )
     return AskResponse(**result)
