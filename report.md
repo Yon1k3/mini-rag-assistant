@@ -47,28 +47,30 @@ Metadata для chunks:
 
 Вимога: зробити similarity search і хоча б одну покращену retrieval стратегію.
 
-У фінальній версії використовується не набір окремих режимів, а один послідовний pipeline:
+У проєкті використовується LangGraph ReAct agent і один послідовний retrieval pipeline:
 
 ```text
 question
--> rewrite query
--> apply metadata filter
--> similarity search + BM25
--> fusion
--> rerank
+-> LangGraph agent reads the question
+-> agent calls search_rag_database(query, metadata)
+-> retrieval pipeline: query rewrite -> metadata filter -> hybrid search -> rerank
+-> agent reads tool output
 -> answer with sources
 ```
 
 Як це реалізовано:
 
+- `src/answering/rag_chain.py`: створює `RAGAgent` через `langchain.agents.create_agent`.
+- `search_rag_database`: tool, який приймає `query` і optional `DocumentMetadata`.
+- `DocumentMetadata`: schema для metadata filters: `document_source`, `document_type`, `document_year`, `document_date`, `source_file`, `page_number`.
 - `query_rewriter.py`: Ollama переписує питання в коротший search query.
 - `retriever.py`: підключає embeddings, Chroma і запускає повний pipeline.
 - `hybrid_retriever.py`: виконує dense similarity search + BM25 keyword search.
 - `reciprocal_rank_fusion`: об'єднує результати vector search і keyword search.
 - `reranker.py`: переоцінює candidates через cross-encoder або lexical fallback.
-- Metadata filter застосовується перед пошуком, якщо користувач передав фільтр або якщо система знайшла рік у питанні, наприклад `2022`.
+- Metadata filter застосовується перед пошуком, якщо agent витягнув metadata із питання або якщо користувач передав filter через UI/API.
 
-Такий pipeline використовує всі покращені стратегії послідовно, а не окремо.
+Такий workflow дозволяє LLM самостійно сформувати tool arguments, викликати RAG і потім відповісти на основі tool output.
 
 ## 5. Answering
 
@@ -77,9 +79,11 @@ question
 Реалізація:
 
 - RAG pipeline: `src/answering/rag_chain.py`.
-- Answering перероблено на LangGraph graph зі state, окремими nodes і `MemorySaver` checkpointer memory.
-- Основні nodes: `initialize_state`, `retrieve_context`, `prepare_context`, `generate_answer`, `finalize_response`.
-- Prompt: `src/answering/prompts.py`.
+- `RAGAgent` створює agent через `create_agent`.
+- `search_rag_database` повертає chunks у текстовому форматі з `source_file`, `document_source`, `document_year`, `page_number`, `chunk_id`, `url` і `Content`.
+- `MemorySaver` використовується як in-memory checkpointer для діалогової пам'яті.
+- `thread_id` відокремлює різні діалоги в Streamlit, FastAPI і evaluation.
+- System prompt вимагає завжди викликати tool, не використовувати зовнішні знання і цитувати джерела.
 - LLM: Ollama через `langchain-ollama`.
 - Sources формуються з metadata retrieved chunks.
 - Якщо контекст не знайдено або LLM не може відповісти, система повертає:
@@ -106,13 +110,13 @@ I don't know based on the provided context.
 - `answer_keyword_match_score`: чи є очікувані ключові слова;
 - `latency_seconds`: час відповіді.
 
-Після переходу на один full pipeline evaluation рахується як:
+Evaluation рахується як:
 
 ```text
 20 questions x 1 full pipeline = 20 runs
 ```
 
-Останній запуск після об'єднання retrieval стратегій і переходу на LangGraph:
+Останній запуск з LangGraph ReAct agent:
 
 ```text
 Running 20 questions with full_pipeline and EVAL_SLEEP_SECONDS=0
@@ -120,10 +124,10 @@ Retrieval pipeline: full_pipeline
 Pipeline steps: query_rewrite -> metadata_filter -> hybrid -> rerank
 Total questions: 20
 Total runs: 20
-Average latency: 13.765s
-Source recall@k: 0.900
-Groundedness score: 0.762
-Answer keyword match score: 0.800
+Average latency: 16.719s
+Source recall@k: 0.850
+Groundedness score: 0.673
+Answer keyword match score: 0.804
 ```
 
 ## 7. Demo
@@ -156,8 +160,9 @@ FastAPI endpoint:
 - Metadata для кожного chunk.
 - Chroma vector index.
 - Full retrieval pipeline: query rewrite, metadata filter, hybrid search, fusion, rerank.
-- LangGraph state graph для answering з memory/checkpointer.
-- Відповідь тільки на основі retrieved context.
+- LangGraph ReAct agent з RAG tool і `MemorySaver`.
+- Agent-generated metadata filters через `DocumentMetadata`.
+- Відповідь тільки на основі tool output.
 - Sources у відповіді.
 - Streamlit UI.
 - FastAPI endpoint.
@@ -172,57 +177,7 @@ FastAPI endpoint:
 - Якщо Ollama server не запущений, query rewriting і answering повернуть помилку підключення.
 - Groundedness metric евристичний і не замінює ручну перевірку.
 
-## 10. Git Гілки Та Зміни
-
-### `add_generate_docs`
-
-Ця гілка відповідала за metadata і підготовку документів до фільтрації:
-
-- додано `data/processed/source_metadata.json`;
-- додано `src/ingestion/metadata.py`;
-- у metadata з'явились поля `document_year` і `document_date`;
-- ingestion pipeline почав зберігати ці поля в chunks;
-- Chroma index було перебудовано локально, щоб metadata потрапила у vector database.
-
-Роки в metadata використовуються для демонстрації metadata filtering. Наприклад, FastAPI має `document_year=2022`, тому запит з `from 2022` або явний filter `{"document_year": 2022}` обмежує пошук відповідними chunks.
-
-### `add_combine_retrievers`
-
-Ця гілка змінила retrieval logic. До цього різні стратегії можна було порівнювати окремо. Після зміни вони працюють як один послідовний pipeline:
-
-```text
-question
--> rewrite query
--> apply metadata filter
--> similarity search + BM25
--> fusion
--> rerank
--> answer with sources
-```
-
-Основні зміни:
-
-- `src/retrieval/retriever.py` став головною точкою запуску full pipeline;
-- query rewriting переписує питання в коротший пошуковий запит;
-- metadata filtering застосовується до dense і keyword пошуку;
-- hybrid search поєднує Chroma similarity search і BM25;
-- fusion об'єднує результати двох пошуків;
-- reranker залишає найкращі chunks для відповіді;
-- `src/evaluation/run_eval.py` рахує метрики для одного `full_pipeline`.
-
-### `refactor_to_langgraph`
-
-Ця гілка змінила answering layer без зміни зовнішньої логіки відповіді:
-
-- `src/answering/rag_chain.py` перероблено на LangGraph `StateGraph`;
-- додано state для question, metadata filter, retrieved chunks, context, answer, sources і messages;
-- pipeline answering розділено на nodes: `initialize_state`, `retrieve_context`, `prepare_context`, `generate_answer`, `finalize_response`;
-- додано `MemorySaver` checkpointer memory;
-- додано `thread_id` для окремих діалогів у Streamlit, FastAPI і evaluation;
-- `src/app/api.py` і `src/app/streamlit_app.py` передають `thread_id`;
-- `src/evaluation/run_eval.py` створює окремий `thread_id` для кожного eval question.
-
-## 11. Приклади Відповідей
+## 10. Приклади Відповідей
 
 5 хороших прикладів з останнього evaluation:
 
@@ -240,6 +195,6 @@ question
 - `q002`: low metric score;
 - `q017`: low metric score.
 
-## 12. Висновок
+## 11. Висновок
 
-Проєкт закриває основні вимоги mini RAG assistant: ingestion, chunking, metadata, vector index, покращений retrieval pipeline, answering із sources, чесне "не знаю", evaluation pipeline, Streamlit UI і FastAPI API. Фінальна retrieval логіка працює послідовно: спочатку query rewriting, потім metadata filtering, hybrid search, fusion, reranking і тільки після цього generation відповіді.
+Проєкт закриває основні вимоги mini RAG assistant: ingestion, chunking, metadata, vector index, покращений retrieval pipeline, answering із sources, чесне "не знаю", evaluation pipeline, Streamlit UI і FastAPI API. Поточна answering логіка працює через LangGraph ReAct agent: LLM генерує аргументи для RAG tool, tool повертає chunks із source metadata, а фінальна відповідь формується тільки на основі цього tool output.

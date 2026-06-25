@@ -5,10 +5,10 @@
     "pipeline_steps": "query_rewrite -> metadata_filter -> hybrid -> rerank",
     "total_questions": 20,
     "total_runs": 20,
-    "average_latency": 13.764906675000748,
-    "source_recall_at_k": 0.9,
-    "groundedness_score": 0.7620136697294121,
-    "answer_keyword_match_score": 0.7999999999999999
+    "average_latency": 16.718585869999515,
+    "source_recall_at_k": 0.85,
+    "groundedness_score": 0.6730254397605331,
+    "answer_keyword_match_score": 0.8041666666666667
   },
   "results": [
     {
@@ -17,8 +17,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nFastAPI is used for building high-performance APIs with Python.\n\nSources:\n\n1. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000514-82de07f91e, url: https://fastapi.tiangolo.com/\n2. source_file: data/raw/markdown/fastapi-index.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000049-59173db749, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/index.md\n3. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000555-fce9fc461c, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n4. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000515-725f17d213, url: https://fastapi.tiangolo.com/\n5. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000513-56eef0104d, url: https://fastapi.tiangolo.com/",
-      "answer_text": "FastAPI is used for building high-performance APIs with Python.",
+      "answer": "Answer:\nFastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints. The key features are:\n\n* Fast: Very high performance, on par with NodeJS and Go (thanks to Starlette and Pydantic). One of the fastest Python frameworks available.\n* Fast to code: Increase the speed to develop features by about 200% to 300%. *\n* Fewer bugs: Reduce about 40% of human (developer) induced errors. *\n* Intuitive: Great editor support. Completion everywhere. Less time debugging.\n* Easy: Designed to be easy to use and learn. Less time reading docs.\n* Short: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* Robust: Get production-ready code. With automatic interactive documentation.\n* Standards-based: Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema.\n\nSources:\n\n1. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000514-82de07f91e, url: https://fastapi.tiangolo.com/\n2. source_file: data/raw/markdown/fastapi-index.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000049-59173db749, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/index.md\n3. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000555-fce9fc461c, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n4. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000515-725f17d213, url: https://fastapi.tiangolo.com/\n5. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000513-56eef0104d, url: https://fastapi.tiangolo.com/",
+      "answer_text": "FastAPI is a modern, fast (high-performance), web framework for building APIs with Python based on standard Python type hints. The key features are:\n\n* Fast: Very high performance, on par with NodeJS and Go (thanks to Starlette and Pydantic). One of the fastest Python frameworks available.\n* Fast to code: Increase the speed to develop features by about 200% to 300%. *\n* Fewer bugs: Reduce about 40% of human (developer) induced errors. *\n* Intuitive: Great editor support. Completion everywhere. Less time debugging.\n* Easy: Designed to be easy to use and learn. Less time reading docs.\n* Short: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.\n* Robust: Get production-ready code. With automatic interactive documentation.\n* Standards-based: Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema.",
       "sources": [
         {
           "source_file": "data/raw/html/fastapi-home.html",
@@ -80,8 +80,8 @@
       "groundedness": 1.0,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 15.217720900000131,
-      "retrieval_latency_seconds": 2.9827845000036177,
+      "latency_seconds": 46.663109399996756,
+      "retrieval_latency_seconds": 29.489610299999185,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -91,8 +91,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nYou can declare path parameters in FastAPI using the `Path` function from the `fastapi` module.\n\nSources:\n\n1. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000108-99914d4e6c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n2. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000099-37bc23d0f2, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n3. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000109-ee45d50342, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n4. source_file: data/raw/markdown/fastapi-request-files.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000112-cf8696c704, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md\n5. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000098-0aa6f2ff9b, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md",
-      "answer_text": "You can declare path parameters in FastAPI using the `Path` function from the `fastapi` module.",
+      "answer": "Answer:\nI don't know based on the provided context.\n\nSources:\n\n1. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000108-99914d4e6c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n2. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000099-37bc23d0f2, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n3. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000109-ee45d50342, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n4. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000098-0aa6f2ff9b, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n5. source_file: data/raw/markdown/fastapi-path-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000088-55386e9829, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/path-params.md",
+      "answer_text": "I don't know based on the provided context.",
       "sources": [
         {
           "source_file": "data/raw/markdown/fastapi-request-body.md",
@@ -128,17 +128,6 @@
           "chunk_id": "chunk-000109-ee45d50342"
         },
         {
-          "source_file": "data/raw/markdown/fastapi-request-files.md",
-          "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md",
-          "document_source": "FastAPI",
-          "document_type": "markdown",
-          "document_year": 2022,
-          "document_date": "2022-01-01",
-          "page_number": null,
-          "section_title": "File Parameters with `UploadFile` { #file-parameters-with-uploadfile }",
-          "chunk_id": "chunk-000112-cf8696c704"
-        },
-        {
           "source_file": "data/raw/markdown/fastapi-query-params.md",
           "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md",
           "document_source": "FastAPI",
@@ -148,14 +137,25 @@
           "page_number": null,
           "section_title": "Query parameter type conversion { #query-parameter-type-conversion }",
           "chunk_id": "chunk-000098-0aa6f2ff9b"
+        },
+        {
+          "source_file": "data/raw/markdown/fastapi-path-params.md",
+          "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/path-params.md",
+          "document_source": "FastAPI",
+          "document_type": "markdown",
+          "document_year": 2022,
+          "document_date": "2022-01-01",
+          "page_number": null,
+          "section_title": "Standards-based benefits, alternative documentation { #standards-based-benefits-alternative-documentation }",
+          "chunk_id": "chunk-000088-55386e9829"
         }
       ],
-      "source_recall_at_k": false,
-      "groundedness": 0.9,
-      "answer_contains_expected_keywords": true,
-      "answer_keyword_match_score": 1.0,
-      "latency_seconds": 13.790022100001806,
-      "retrieval_latency_seconds": 3.286561699998856,
+      "source_recall_at_k": true,
+      "groundedness": 0.0,
+      "answer_contains_expected_keywords": false,
+      "answer_keyword_match_score": 0.0,
+      "latency_seconds": 8.482822700003453,
+      "retrieval_latency_seconds": 3.2662109000011696,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -165,8 +165,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nQuery parameters in FastAPI are optional parameters that can be passed to a path operation function using the URL. They are declared as function parameters with default values, and their types are automatically converted by FastAPI.\n\nSources:\n\n1. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000547-6ef6b0f2b0, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n2. source_file: data/raw/markdown/fastapi-dependencies.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000006-365772069c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md\n3. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000098-0aa6f2ff9b, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n4. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000099-37bc23d0f2, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n5. source_file: data/raw/markdown/fastapi-request-files.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000112-cf8696c704, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md",
-      "answer_text": "Query parameters in FastAPI are optional parameters that can be passed to a path operation function using the URL. They are declared as function parameters with default values, and their types are automatically converted by FastAPI.",
+      "answer": "Answer:\nQuery parameters in FastAPI are optional or required parameters that can be passed to a path operation function as part of the URL. They are declared using the `Query` annotation and can have default values, types, and other attributes.\n\nSource file: data/raw/html/fastapi-html-dependencies.html\nDocument source: FastAPI\nDocument type: html\nYear: 2022\nDate: 2022-01-01\nPage: null\nChunk id: chunk-000547-6ef6b0f2b0\nURL: https://fastapi.tiangolo.com/tutorial/dependencies/\nContent:\nAn optional query parameter q that is a str.\nAn optional query parameter skip that is an int, and by default is 0.\nAn optional query parameter limit that is an int, and by default is 100.\n\nSource file: data/raw/markdown/fastapi-dependencies.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000006-365772069c\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md\nContent:\nAnd it can return anything you want.\n\nIn this case, this dependency expects:\n\n* An optional query parameter `q` that is a `str`.\n* An optional query parameter `skip` that is an `int`, and by default is `0`.\n* An optional query parameter `limit` that is an `int`, and by default is `100`.\n\nSource file: data/raw/markdown/fastapi-query-params.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000098-0aa6f2ff9b\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\nContent:\nIn this case, the function parameter `q` will be optional, and will be `None` by default.\n\nSource file: data/raw/markdown/fastapi-request-files.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000112-cf8696c704\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md\nContent:\nBut remember that when you import `Query`, `Path`, `File` and others from `fastapi`, those are actually functions that return special classes.\n\n/// tip\n\nTo declare File bodies, you need to use `File`, because otherwise the parameters would be interpreted as query parameters or body (JSON) parameters.\n\nSources:\n\n1. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000547-6ef6b0f2b0, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n2. source_file: data/raw/markdown/fastapi-dependencies.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000006-365772069c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md\n3. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000098-0aa6f2ff9b, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n4. source_file: data/raw/markdown/fastapi-query-params.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000099-37bc23d0f2, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\n5. source_file: data/raw/markdown/fastapi-request-files.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000112-cf8696c704, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md",
+      "answer_text": "Query parameters in FastAPI are optional or required parameters that can be passed to a path operation function as part of the URL. They are declared using the `Query` annotation and can have default values, types, and other attributes.\n\nSource file: data/raw/html/fastapi-html-dependencies.html\nDocument source: FastAPI\nDocument type: html\nYear: 2022\nDate: 2022-01-01\nPage: null\nChunk id: chunk-000547-6ef6b0f2b0\nURL: https://fastapi.tiangolo.com/tutorial/dependencies/\nContent:\nAn optional query parameter q that is a str.\nAn optional query parameter skip that is an int, and by default is 0.\nAn optional query parameter limit that is an int, and by default is 100.\n\nSource file: data/raw/markdown/fastapi-dependencies.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000006-365772069c\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md\nContent:\nAnd it can return anything you want.\n\nIn this case, this dependency expects:\n\n* An optional query parameter `q` that is a `str`.\n* An optional query parameter `skip` that is an `int`, and by default is `0`.\n* An optional query parameter `limit` that is an `int`, and by default is `100`.\n\nSource file: data/raw/markdown/fastapi-query-params.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000098-0aa6f2ff9b\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/query-params.md\nContent:\nIn this case, the function parameter `q` will be optional, and will be `None` by default.\n\nSource file: data/raw/markdown/fastapi-request-files.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2021-01-01\nPage: null\nChunk id: chunk-000112-cf8696c704\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/request-files.md\nContent:\nBut remember that when you import `Query`, `Path`, `File` and others from `fastapi`, those are actually functions that return special classes.\n\n/// tip\n\nTo declare File bodies, you need to use `File`, because otherwise the parameters would be interpreted as query parameters or body (JSON) parameters.",
       "sources": [
         {
           "source_file": "data/raw/html/fastapi-html-dependencies.html",
@@ -225,11 +225,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.7894736842105263,
+      "groundedness": 0.6210526315789474,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 12.732455700002902,
-      "retrieval_latency_seconds": 2.165603800000099,
+      "latency_seconds": 41.56771289999597,
+      "retrieval_latency_seconds": 3.0122454000011203,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -239,8 +239,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nFastAPI uses Pydantic models for request bodies by declaring function parameters to be of the type of a Pydantic model. FastAPI will then interpret these parameters as request bodies.\n\nSources:\n\n1. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000108-99914d4e6c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n2. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000102-093e658041, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n3. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000109-ee45d50342, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n4. source_file: data/raw/markdown/fastapi-body-fields.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000001-e1d77c0b08, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body-fields.md\n5. source_file: data/raw/markdown/fastapi-body-fields.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000002-b6b3acdb5c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body-fields.md",
-      "answer_text": "FastAPI uses Pydantic models for request bodies by declaring function parameters to be of the type of a Pydantic model. FastAPI will then interpret these parameters as request bodies.",
+      "answer": "Answer:\nFastAPI uses Pydantic models for request bodies by declaring function parameters that are of the type of a Pydantic model. FastAPI will recognize these parameters as request bodies and take the data from the correct place.\n\nSource file: data/raw/markdown/fastapi-request-body.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2022-01-01\nPage: null\nChunk id: chunk-000108-99914d4e6c\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n\nSources:\n\n1. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000108-99914d4e6c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n2. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000102-093e658041, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n3. source_file: data/raw/markdown/fastapi-request-body.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000109-ee45d50342, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md\n4. source_file: data/raw/markdown/fastapi-body-fields.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000001-e1d77c0b08, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body-fields.md\n5. source_file: data/raw/markdown/fastapi-body-fields.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000002-b6b3acdb5c, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body-fields.md",
+      "answer_text": "FastAPI uses Pydantic models for request bodies by declaring function parameters that are of the type of a Pydantic model. FastAPI will recognize these parameters as request bodies and take the data from the correct place.\n\nSource file: data/raw/markdown/fastapi-request-body.md\nDocument source: FastAPI\nDocument type: markdown\nYear: 2022\nDate: 2022-01-01\nPage: null\nChunk id: chunk-000108-99914d4e6c\nURL: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/body.md",
       "sources": [
         {
           "source_file": "data/raw/markdown/fastapi-request-body.md",
@@ -299,11 +299,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.7333333333333333,
+      "groundedness": 0.475,
       "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.5,
-      "latency_seconds": 12.281125399997109,
-      "retrieval_latency_seconds": 2.423924900002021,
+      "answer_keyword_match_score": 0.75,
+      "latency_seconds": 14.908696400001645,
+      "retrieval_latency_seconds": 3.5012694999968517,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -313,8 +313,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nDependencies in FastAPI are a way for your code to declare things that it requires to work and use, which are then provided by the system (in this case, FastAPI). This is known as \"Dependency Injection\".\n\nSources:\n\n1. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000544-912fd063c2, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n2. source_file: data/raw/markdown/fastapi-dependencies.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000004-d4d59a94ae, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md\n3. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000543-17c28eeb76, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n4. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000556-0397f4d10f, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n5. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000529-2bb79b792f, url: https://fastapi.tiangolo.com/",
-      "answer_text": "Dependencies in FastAPI are a way for your code to declare things that it requires to work and use, which are then provided by the system (in this case, FastAPI). This is known as \"Dependency Injection\".",
+      "answer": "Answer:\nI don't know based on the provided context.\n\nSources:\n\n1. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000544-912fd063c2, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n2. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000533-2b5a30cdb4, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n3. source_file: data/raw/html/fastapi-home.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000529-2bb79b792f, url: https://fastapi.tiangolo.com/\n4. source_file: data/raw/html/fastapi-html-dependencies.html, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000556-0397f4d10f, url: https://fastapi.tiangolo.com/tutorial/dependencies/\n5. source_file: data/raw/markdown/fastapi-index.md, document_source: FastAPI, year: 2022, page: null, chunk_id: chunk-000078-c9e2c81072, url: https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/index.md",
+      "answer_text": "I don't know based on the provided context.",
       "sources": [
         {
           "source_file": "data/raw/html/fastapi-html-dependencies.html",
@@ -328,17 +328,6 @@
           "chunk_id": "chunk-000544-912fd063c2"
         },
         {
-          "source_file": "data/raw/markdown/fastapi-dependencies.md",
-          "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/tutorial/dependencies/index.md",
-          "document_source": "FastAPI",
-          "document_type": "markdown",
-          "document_year": 2022,
-          "document_date": "2022-01-01",
-          "page_number": null,
-          "section_title": "Dependencies { #dependencies }",
-          "chunk_id": "chunk-000004-d4d59a94ae"
-        },
-        {
           "source_file": "data/raw/html/fastapi-html-dependencies.html",
           "source_url": "https://fastapi.tiangolo.com/tutorial/dependencies/",
           "document_source": "FastAPI",
@@ -347,7 +336,18 @@
           "document_date": "2022-01-01",
           "page_number": null,
           "section_title": "Dependencies - FastAPI",
-          "chunk_id": "chunk-000543-17c28eeb76"
+          "chunk_id": "chunk-000533-2b5a30cdb4"
+        },
+        {
+          "source_file": "data/raw/html/fastapi-home.html",
+          "source_url": "https://fastapi.tiangolo.com/",
+          "document_source": "FastAPI",
+          "document_type": "html",
+          "document_year": 2022,
+          "document_date": "2022-01-01",
+          "page_number": null,
+          "section_title": "FastAPI - FastAPI",
+          "chunk_id": "chunk-000529-2bb79b792f"
         },
         {
           "source_file": "data/raw/html/fastapi-html-dependencies.html",
@@ -361,23 +361,23 @@
           "chunk_id": "chunk-000556-0397f4d10f"
         },
         {
-          "source_file": "data/raw/html/fastapi-home.html",
-          "source_url": "https://fastapi.tiangolo.com/",
+          "source_file": "data/raw/markdown/fastapi-index.md",
+          "source_url": "https://raw.githubusercontent.com/fastapi/fastapi/master/docs/en/docs/index.md",
           "document_source": "FastAPI",
-          "document_type": "html",
+          "document_type": "markdown",
           "document_year": 2022,
           "document_date": "2022-01-01",
           "page_number": null,
-          "section_title": "FastAPI - FastAPI",
-          "chunk_id": "chunk-000529-2bb79b792f"
+          "section_title": "Without `standard` Dependencies { #without-standard-dependencies }",
+          "chunk_id": "chunk-000078-c9e2c81072"
         }
       ],
-      "source_recall_at_k": true,
-      "groundedness": 0.8888888888888888,
+      "source_recall_at_k": false,
+      "groundedness": 0.0,
       "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 16.7988136999993,
-      "retrieval_latency_seconds": 1.9420995999971638,
+      "answer_keyword_match_score": 0.0,
+      "latency_seconds": 21.66494299999613,
+      "retrieval_latency_seconds": 2.9373369999957504,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -387,20 +387,9 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nA Pydantic model is a class that inherits from `BaseModel` and defines fields as annotated attributes. It's used to define schema in Pydantic, similar to structs in other languages, and can be thought of as the requirements of a single endpoint in an API.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000893-adf7537c60, url: https://docs.pydantic.dev/latest/concepts/models/\n2. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000927-7627228c54, url: https://docs.pydantic.dev/latest/concepts/models/\n3. source_file: data/raw/markdown/pydantic-models.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000269-c29df13cec, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/models.md\n4. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000912-f704943c0a, url: https://docs.pydantic.dev/latest/concepts/models/\n5. source_file: data/raw/markdown/pydantic-models.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000326-a32cdaa8f7, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/models.md",
-      "answer_text": "A Pydantic model is a class that inherits from `BaseModel` and defines fields as annotated attributes. It's used to define schema in Pydantic, similar to structs in other languages, and can be thought of as the requirements of a single endpoint in an API.",
+      "answer": "Answer:\nA Pydantic model is a class that inherits from `BaseModel` and defines fields as annotated attributes. It's used for defining schema in Pydantic, similar to structs in other languages or the requirements of a single endpoint in an API. Models share similarities with Python's dataclasses but have been designed with subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000927-7627228c54, url: https://docs.pydantic.dev/latest/concepts/models/\n2. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000893-adf7537c60, url: https://docs.pydantic.dev/latest/concepts/models/\n3. source_file: data/raw/html/pydantic-html-fields.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000790-176414c44a, url: https://docs.pydantic.dev/latest/concepts/fields/\n4. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000909-8105cfa25a, url: https://docs.pydantic.dev/latest/concepts/models/\n5. source_file: data/raw/html/pydantic-html-models.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000951-503ee658ed, url: https://docs.pydantic.dev/latest/concepts/models/",
+      "answer_text": "A Pydantic model is a class that inherits from `BaseModel` and defines fields as annotated attributes. It's used for defining schema in Pydantic, similar to structs in other languages or the requirements of a single endpoint in an API. Models share similarities with Python's dataclasses but have been designed with subtle-yet-important differences that streamline certain workflows related to validation, serialization, and JSON schema generation.",
       "sources": [
-        {
-          "source_file": "data/raw/html/pydantic-html-models.html",
-          "source_url": "https://docs.pydantic.dev/latest/concepts/models/",
-          "document_source": "Pydantic",
-          "document_type": "html",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Models | Pydantic Docs",
-          "chunk_id": "chunk-000893-adf7537c60"
-        },
         {
           "source_file": "data/raw/html/pydantic-html-models.html",
           "source_url": "https://docs.pydantic.dev/latest/concepts/models/",
@@ -413,15 +402,26 @@
           "chunk_id": "chunk-000927-7627228c54"
         },
         {
-          "source_file": "data/raw/markdown/pydantic-models.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/models.md",
+          "source_file": "data/raw/html/pydantic-html-models.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/models/",
           "document_source": "Pydantic",
-          "document_type": "markdown",
+          "document_type": "html",
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "Basic model usage",
-          "chunk_id": "chunk-000269-c29df13cec"
+          "section_title": "Models | Pydantic Docs",
+          "chunk_id": "chunk-000893-adf7537c60"
+        },
+        {
+          "source_file": "data/raw/html/pydantic-html-fields.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/fields/",
+          "document_source": "Pydantic",
+          "document_type": "html",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Fields | Pydantic Docs",
+          "chunk_id": "chunk-000790-176414c44a"
         },
         {
           "source_file": "data/raw/html/pydantic-html-models.html",
@@ -432,26 +432,26 @@
           "document_date": "2023-01-01",
           "page_number": null,
           "section_title": "Models | Pydantic Docs",
-          "chunk_id": "chunk-000912-f704943c0a"
+          "chunk_id": "chunk-000909-8105cfa25a"
         },
         {
-          "source_file": "data/raw/markdown/pydantic-models.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/models.md",
+          "source_file": "data/raw/html/pydantic-html-models.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/models/",
           "document_source": "Pydantic",
-          "document_type": "markdown",
+          "document_type": "html",
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "Dynamic model creation",
-          "chunk_id": "chunk-000326-a32cdaa8f7"
+          "section_title": "Models | Pydantic Docs",
+          "chunk_id": "chunk-000951-503ee658ed"
         }
       ],
-      "source_recall_at_k": true,
-      "groundedness": 0.8695652173913043,
-      "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.75,
-      "latency_seconds": 12.263484499999322,
-      "retrieval_latency_seconds": 2.0161842000015895,
+      "source_recall_at_k": false,
+      "groundedness": 0.9523809523809523,
+      "answer_contains_expected_keywords": true,
+      "answer_keyword_match_score": 1.0,
+      "latency_seconds": 12.498074400005862,
+      "retrieval_latency_seconds": 3.0294135000003735,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -461,8 +461,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPydantic field defaults are used to specify the default value for a model field. They can also be used to validate default values.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-fields.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000790-176414c44a, url: https://docs.pydantic.dev/latest/concepts/fields/\n2. source_file: data/raw/markdown/pydantic-validators.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000499-4189924203, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md\n3. source_file: data/raw/html/pydantic-html-validators.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-001044-5744d9bf6f, url: https://docs.pydantic.dev/latest/concepts/validators/\n4. source_file: data/raw/markdown/pydantic-fields.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000186-483b8370c7, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md\n5. source_file: data/raw/markdown/pydantic-fields.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000185-899811c5da, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md",
-      "answer_text": "Pydantic field defaults are used to specify the default value for a model field. They can also be used to validate default values.",
+      "answer": "Answer:\nPydantic field defaults are used to provide default values for fields in Pydantic models. This can be done using the normal assignment syntax or by providing a value to the `default` argument of the `Field()` function.\n\nDefault values can be provided as constants, functions that return a value, or even mutable objects like lists or dictionaries. However, if the default value is a mutable object, it will be shared across all instances of the model, which can lead to unexpected behavior.\n\nPydantic also provides a way to validate default values using the `validate_default` field parameter or the `validate_default` configuration value. This ensures that the default value conforms to the type and constraints specified for the field.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-fields.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000790-176414c44a, url: https://docs.pydantic.dev/latest/concepts/fields/\n2. source_file: data/raw/html/pydantic-html-fields.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000797-e3feba6a4c, url: https://docs.pydantic.dev/latest/concepts/fields/\n3. source_file: data/raw/markdown/pydantic-fields.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000183-d911dee0e3, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md\n4. source_file: data/raw/markdown/pydantic-fields.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000177-7a461fc396, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md\n5. source_file: data/raw/markdown/pydantic-fields.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000185-899811c5da, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md",
+      "answer_text": "Pydantic field defaults are used to provide default values for fields in Pydantic models. This can be done using the normal assignment syntax or by providing a value to the `default` argument of the `Field()` function.\n\nDefault values can be provided as constants, functions that return a value, or even mutable objects like lists or dictionaries. However, if the default value is a mutable object, it will be shared across all instances of the model, which can lead to unexpected behavior.\n\nPydantic also provides a way to validate default values using the `validate_default` field parameter or the `validate_default` configuration value. This ensures that the default value conforms to the type and constraints specified for the field.",
       "sources": [
         {
           "source_file": "data/raw/html/pydantic-html-fields.html",
@@ -476,26 +476,15 @@
           "chunk_id": "chunk-000790-176414c44a"
         },
         {
-          "source_file": "data/raw/markdown/pydantic-validators.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
-          "document_source": "Pydantic",
-          "document_type": "markdown",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Field validators",
-          "chunk_id": "chunk-000499-4189924203"
-        },
-        {
-          "source_file": "data/raw/html/pydantic-html-validators.html",
-          "source_url": "https://docs.pydantic.dev/latest/concepts/validators/",
+          "source_file": "data/raw/html/pydantic-html-fields.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/fields/",
           "document_source": "Pydantic",
           "document_type": "html",
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "Validators | Pydantic Docs",
-          "chunk_id": "chunk-001044-5744d9bf6f"
+          "section_title": "Fields | Pydantic Docs",
+          "chunk_id": "chunk-000797-e3feba6a4c"
         },
         {
           "source_file": "data/raw/markdown/pydantic-fields.md",
@@ -505,8 +494,19 @@
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "Mutable default values",
-          "chunk_id": "chunk-000186-483b8370c7"
+          "section_title": "Default values",
+          "chunk_id": "chunk-000183-d911dee0e3"
+        },
+        {
+          "source_file": "data/raw/markdown/pydantic-fields.md",
+          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/fields.md",
+          "document_source": "Pydantic",
+          "document_type": "markdown",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "The annotated pattern",
+          "chunk_id": "chunk-000177-7a461fc396"
         },
         {
           "source_file": "data/raw/markdown/pydantic-fields.md",
@@ -521,11 +521,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.7692307692307693,
+      "groundedness": 0.6226415094339622,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 13.744383500001277,
-      "retrieval_latency_seconds": 2.1018633999992744,
+      "latency_seconds": 16.69222869999794,
+      "retrieval_latency_seconds": 2.804175099998247,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -535,9 +535,42 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPydantic validators are used to validate and process data in various powerful ways. They can be customised and serialised, allowing for alteration of how data is processed.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-home.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000776-b74e13a250, url: https://docs.pydantic.dev/latest/\n2. source_file: data/raw/markdown/pydantic-index.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000214-0f446cd3bc, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/index.md\n3. source_file: data/raw/html/pydantic-html-validators.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-001015-48b1237dba, url: https://docs.pydantic.dev/latest/concepts/validators/\n4. source_file: data/raw/markdown/pydantic-validators.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000465-9203d3f23e, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md\n5. source_file: data/raw/markdown/pydantic-validators.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000482-e579142e5f, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
-      "answer_text": "Pydantic validators are used to validate and process data in various powerful ways. They can be customised and serialised, allowing for alteration of how data is processed.",
+      "answer": "Answer:\nPydantic validators are used for customizing the validation process of data. They can be defined as *wrap* or *plain* validators, and can perform various operations on the input value before or after Pydantic's internal validation.\n\nSources:\n\n1. source_file: data/raw/markdown/pydantic-validators.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000476-b1d00dcded, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md\n2. source_file: data/raw/html/pydantic-html-validators.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-001026-f7cd689086, url: https://docs.pydantic.dev/latest/concepts/validators/\n3. source_file: data/raw/markdown/pydantic-validators.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000474-da4a2756f8, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md\n4. source_file: data/raw/html/pydantic-home.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000776-b74e13a250, url: https://docs.pydantic.dev/latest/\n5. source_file: data/raw/html/pydantic-html-validators.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-001008-2a2e94cc70, url: https://docs.pydantic.dev/latest/concepts/validators/",
+      "answer_text": "Pydantic validators are used for customizing the validation process of data. They can be defined as *wrap* or *plain* validators, and can perform various operations on the input value before or after Pydantic's internal validation.",
       "sources": [
+        {
+          "source_file": "data/raw/markdown/pydantic-validators.md",
+          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
+          "document_source": "Pydantic",
+          "document_type": "markdown",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Field validators",
+          "chunk_id": "chunk-000476-b1d00dcded"
+        },
+        {
+          "source_file": "data/raw/html/pydantic-html-validators.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/validators/",
+          "document_source": "Pydantic",
+          "document_type": "html",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Validators | Pydantic Docs",
+          "chunk_id": "chunk-001026-f7cd689086"
+        },
+        {
+          "source_file": "data/raw/markdown/pydantic-validators.md",
+          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
+          "document_source": "Pydantic",
+          "document_type": "markdown",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Field validators",
+          "chunk_id": "chunk-000474-da4a2756f8"
+        },
         {
           "source_file": "data/raw/html/pydantic-home.html",
           "source_url": "https://docs.pydantic.dev/latest/",
@@ -550,17 +583,6 @@
           "chunk_id": "chunk-000776-b74e13a250"
         },
         {
-          "source_file": "data/raw/markdown/pydantic-index.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/index.md",
-          "document_source": "Pydantic",
-          "document_type": "markdown",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Pydantic Validation",
-          "chunk_id": "chunk-000214-0f446cd3bc"
-        },
-        {
           "source_file": "data/raw/html/pydantic-html-validators.html",
           "source_url": "https://docs.pydantic.dev/latest/concepts/validators/",
           "document_source": "Pydantic",
@@ -569,37 +591,15 @@
           "document_date": "2023-01-01",
           "page_number": null,
           "section_title": "Validators | Pydantic Docs",
-          "chunk_id": "chunk-001015-48b1237dba"
-        },
-        {
-          "source_file": "data/raw/markdown/pydantic-validators.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
-          "document_source": "Pydantic",
-          "document_type": "markdown",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Field validators",
-          "chunk_id": "chunk-000465-9203d3f23e"
-        },
-        {
-          "source_file": "data/raw/markdown/pydantic-validators.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/validators.md",
-          "document_source": "Pydantic",
-          "document_type": "markdown",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Field validators",
-          "chunk_id": "chunk-000482-e579142e5f"
+          "chunk_id": "chunk-001008-2a2e94cc70"
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.5882352941176471,
-      "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 16.473377100002836,
-      "retrieval_latency_seconds": 2.096459100001084,
+      "groundedness": 0.85,
+      "answer_contains_expected_keywords": true,
+      "answer_keyword_match_score": 1.0,
+      "latency_seconds": 11.111178300001484,
+      "retrieval_latency_seconds": 1.99273820000235,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -609,9 +609,20 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPydantic serialization converts a model to a dictionary or JSON-encoded string.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000997-1c68e3a5ac, url: https://docs.pydantic.dev/latest/concepts/serialization/\n2. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000971-62c2696406, url: https://docs.pydantic.dev/latest/concepts/serialization/\n3. source_file: data/raw/html/pydantic-home.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000776-b74e13a250, url: https://docs.pydantic.dev/latest/\n4. source_file: data/raw/markdown/pydantic-serialization.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000377-0ec21c4b43, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md\n5. source_file: data/raw/markdown/pydantic-serialization.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000349-81db6f2ab8, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md",
-      "answer_text": "Pydantic serialization converts a model to a dictionary or JSON-encoded string.",
+      "answer": "Answer:\nPydantic serialization refers to the process of converting a Pydantic model or dataclass instance into a dictionary or JSON-encoded string. This can be done in various ways, including polymorphic serialization, where the type annotation is not used to infer how the value should be serialized, but instead the actual type of the value at runtime is inspected to do so.\n\nPolymorphic serialization can be configured in different ways, and Pydantic can infer how to serialize certain types, such as Python standard library types or types with a `__pydantic_serializer__` attribute. The process of serializing data can be customized for the whole model or on a per-field or per-type basis.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000992-28943a6d18, url: https://docs.pydantic.dev/latest/concepts/serialization/\n2. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000997-1c68e3a5ac, url: https://docs.pydantic.dev/latest/concepts/serialization/\n3. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000971-62c2696406, url: https://docs.pydantic.dev/latest/concepts/serialization/\n4. source_file: data/raw/markdown/pydantic-serialization.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000377-0ec21c4b43, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md\n5. source_file: data/raw/html/pydantic-html-serialization.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000963-94b1542fee, url: https://docs.pydantic.dev/latest/concepts/serialization/",
+      "answer_text": "Pydantic serialization refers to the process of converting a Pydantic model or dataclass instance into a dictionary or JSON-encoded string. This can be done in various ways, including polymorphic serialization, where the type annotation is not used to infer how the value should be serialized, but instead the actual type of the value at runtime is inspected to do so.\n\nPolymorphic serialization can be configured in different ways, and Pydantic can infer how to serialize certain types, such as Python standard library types or types with a `__pydantic_serializer__` attribute. The process of serializing data can be customized for the whole model or on a per-field or per-type basis.",
       "sources": [
+        {
+          "source_file": "data/raw/html/pydantic-html-serialization.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/serialization/",
+          "document_source": "Pydantic",
+          "document_type": "html",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Serialization | Pydantic Docs",
+          "chunk_id": "chunk-000992-28943a6d18"
+        },
         {
           "source_file": "data/raw/html/pydantic-html-serialization.html",
           "source_url": "https://docs.pydantic.dev/latest/concepts/serialization/",
@@ -635,17 +646,6 @@
           "chunk_id": "chunk-000971-62c2696406"
         },
         {
-          "source_file": "data/raw/html/pydantic-home.html",
-          "source_url": "https://docs.pydantic.dev/latest/",
-          "document_source": "Pydantic",
-          "document_type": "html",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Welcome to Pydantic | Pydantic Docs",
-          "chunk_id": "chunk-000776-b74e13a250"
-        },
-        {
           "source_file": "data/raw/markdown/pydantic-serialization.md",
           "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md",
           "document_source": "Pydantic",
@@ -657,23 +657,23 @@
           "chunk_id": "chunk-000377-0ec21c4b43"
         },
         {
-          "source_file": "data/raw/markdown/pydantic-serialization.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/serialization.md",
+          "source_file": "data/raw/html/pydantic-html-serialization.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/serialization/",
           "document_source": "Pydantic",
-          "document_type": "markdown",
+          "document_type": "html",
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "Serializing data",
-          "chunk_id": "chunk-000349-81db6f2ab8"
+          "section_title": "Serialization | Pydantic Docs",
+          "chunk_id": "chunk-000963-94b1542fee"
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.875,
+      "groundedness": 0.8653846153846154,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 10.11812920000375,
-      "retrieval_latency_seconds": 1.976116900004854,
+      "latency_seconds": 16.273797999994713,
+      "retrieval_latency_seconds": 2.914034100002027,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -683,9 +683,31 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nJSON Schema is used for customizing and modifying the generated JSON schema in Pydantic. It allows developers to customize the JSON schema generation process, including sorting, field-level customization, and model-level customization.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000877-1271e6fdd9, url: https://docs.pydantic.dev/latest/concepts/json_schema/\n2. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000880-1439645313, url: https://docs.pydantic.dev/latest/concepts/json_schema/\n3. source_file: data/raw/html/pydantic-html-fields.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000818-5e3694dfce, url: https://docs.pydantic.dev/latest/concepts/fields/\n4. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000839-b6946463b2, url: https://docs.pydantic.dev/latest/concepts/json_schema/\n5. source_file: data/raw/markdown/pydantic-json-schema.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000260-bbe10e9986, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md",
-      "answer_text": "JSON Schema is used for customizing and modifying the generated JSON schema in Pydantic. It allows developers to customize the JSON schema generation process, including sorting, field-level customization, and model-level customization.",
+      "answer": "Answer:\nJSON Schema is used in Pydantic for automatic creation and customization of JSON schemas from models. The generated JSON schemas are compliant with the following specifications:\n\n* [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12/release-notes.html)\n* [OpenAPI Specification v3.1.0](https://github.com/OAI/OpenAPI-Specification).\n\nPydantic allows customization of JSON schema generation at both the field and model levels, using various tools such as `Field()`, `WithJsonSchema` annotation, `SkipJsonSchema` annotation, implementing `__get_pydantic_core_schema__`, and implementing `__get_pydantic_json_schema__`.\n\nSources:\n\n1. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000828-1b271e115f, url: https://docs.pydantic.dev/latest/concepts/json_schema/\n2. source_file: data/raw/markdown/pydantic-json-schema.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000221-b85ae5bcb2, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md\n3. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000877-1271e6fdd9, url: https://docs.pydantic.dev/latest/concepts/json_schema/\n4. source_file: data/raw/markdown/pydantic-json-schema.md, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000231-11f365fc80, url: https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md\n5. source_file: data/raw/html/pydantic-html-json-schema.html, document_source: Pydantic, year: 2023, page: null, chunk_id: chunk-000839-b6946463b2, url: https://docs.pydantic.dev/latest/concepts/json_schema/",
+      "answer_text": "JSON Schema is used in Pydantic for automatic creation and customization of JSON schemas from models. The generated JSON schemas are compliant with the following specifications:\n\n* [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12/release-notes.html)\n* [OpenAPI Specification v3.1.0](https://github.com/OAI/OpenAPI-Specification).\n\nPydantic allows customization of JSON schema generation at both the field and model levels, using various tools such as `Field()`, `WithJsonSchema` annotation, `SkipJsonSchema` annotation, implementing `__get_pydantic_core_schema__`, and implementing `__get_pydantic_json_schema__`.",
       "sources": [
+        {
+          "source_file": "data/raw/html/pydantic-html-json-schema.html",
+          "source_url": "https://docs.pydantic.dev/latest/concepts/json_schema/",
+          "document_source": "Pydantic",
+          "document_type": "html",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "JSON Schema | Pydantic Docs",
+          "chunk_id": "chunk-000828-1b271e115f"
+        },
+        {
+          "source_file": "data/raw/markdown/pydantic-json-schema.md",
+          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md",
+          "document_source": "Pydantic",
+          "document_type": "markdown",
+          "document_year": 2023,
+          "document_date": "2023-01-01",
+          "page_number": null,
+          "section_title": "Generating JSON Schema",
+          "chunk_id": "chunk-000221-b85ae5bcb2"
+        },
         {
           "source_file": "data/raw/html/pydantic-html-json-schema.html",
           "source_url": "https://docs.pydantic.dev/latest/concepts/json_schema/",
@@ -698,26 +720,15 @@
           "chunk_id": "chunk-000877-1271e6fdd9"
         },
         {
-          "source_file": "data/raw/html/pydantic-html-json-schema.html",
-          "source_url": "https://docs.pydantic.dev/latest/concepts/json_schema/",
+          "source_file": "data/raw/markdown/pydantic-json-schema.md",
+          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md",
           "document_source": "Pydantic",
-          "document_type": "html",
+          "document_type": "markdown",
           "document_year": 2023,
           "document_date": "2023-01-01",
           "page_number": null,
-          "section_title": "JSON Schema | Pydantic Docs",
-          "chunk_id": "chunk-000880-1439645313"
-        },
-        {
-          "source_file": "data/raw/html/pydantic-html-fields.html",
-          "source_url": "https://docs.pydantic.dev/latest/concepts/fields/",
-          "document_source": "Pydantic",
-          "document_type": "html",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Fields | Pydantic Docs",
-          "chunk_id": "chunk-000818-5e3694dfce"
+          "section_title": "Configuring the `JsonSchemaMode`",
+          "chunk_id": "chunk-000231-11f365fc80"
         },
         {
           "source_file": "data/raw/html/pydantic-html-json-schema.html",
@@ -729,25 +740,14 @@
           "page_number": null,
           "section_title": "JSON Schema | Pydantic Docs",
           "chunk_id": "chunk-000839-b6946463b2"
-        },
-        {
-          "source_file": "data/raw/markdown/pydantic-json-schema.md",
-          "source_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/docs/concepts/json_schema.md",
-          "document_source": "Pydantic",
-          "document_type": "markdown",
-          "document_year": 2023,
-          "document_date": "2023-01-01",
-          "page_number": null,
-          "section_title": "Customizing the JSON Schema Generation Process",
-          "chunk_id": "chunk-000260-bbe10e9986"
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.8333333333333334,
+      "groundedness": 0.9761904761904762,
       "answer_contains_expected_keywords": false,
       "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 13.313632800003688,
-      "retrieval_latency_seconds": 2.223747199997888,
+      "latency_seconds": 18.461964800000715,
+      "retrieval_latency_seconds": 3.2250000999993063,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -757,8 +757,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nLangChain is used for creating customizable agents that can be tailored to specific use cases and data. It provides a highly configurable harness, called `create_agent`, which allows users to compose exactly the agent they need from model, tools, prompt, and middleware.\n\nSources:\n\n1. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n2. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000655-4f40c1312d, url: https://docs.langchain.com/oss/python/langchain/overview\n3. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n4. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000706-500c34b51c, url: https://docs.langchain.com/oss/python/langchain/structured-output\n5. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000708-346da98ff0, url: https://docs.langchain.com/oss/python/langchain/structured-output",
-      "answer_text": "LangChain is used for creating customizable agents that can be tailored to specific use cases and data. It provides a highly configurable harness, called `create_agent`, which allows users to compose exactly the agent they need from model, tools, prompt, and middleware.",
+      "answer": "Answer:\nLangChain is used for building custom agents and applications with a highly configurable harness. It provides a minimal, highly customizable harness that can be tailored to specific use cases and data. LangChain also supports native structured output, which provides high reliability and strict validation, as well as tool calling strategy for models that don't support native structured output.\n\nSources:\n\n1. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n2. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000655-4f40c1312d, url: https://docs.langchain.com/oss/python/langchain/overview\n3. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n4. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000706-500c34b51c, url: https://docs.langchain.com/oss/python/langchain/structured-output\n5. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000708-346da98ff0, url: https://docs.langchain.com/oss/python/langchain/structured-output",
+      "answer_text": "LangChain is used for building custom agents and applications with a highly configurable harness. It provides a minimal, highly customizable harness that can be tailored to specific use cases and data. LangChain also supports native structured output, which provides high reliability and strict validation, as well as tool calling strategy for models that don't support native structured output.",
       "sources": [
         {
           "source_file": "data/raw/html/langchain-overview.html",
@@ -817,11 +817,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.7,
+      "groundedness": 0.8857142857142857,
       "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.3333333333333333,
-      "latency_seconds": 11.552751299997908,
-      "retrieval_latency_seconds": 2.1996432000014465,
+      "answer_keyword_match_score": 0.6666666666666666,
+      "latency_seconds": 11.989536999994016,
+      "retrieval_latency_seconds": 2.829608600004576,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -831,8 +831,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nAgents in LangChain are composable, customizable, and extensible components that can be combined to create a wide range of use cases. They consist of a model, tools, prompt, and middleware, which can be composed together using the `create_agent` function.\n\nSources:\n\n1. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n2. source_file: data/raw/html/langchain-agents.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000640-48369a8954, url: https://docs.langchain.com/oss/python/langchain/agents\n3. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000754-389185d231, url: https://docs.langchain.com/oss/python/langchain/tools\n4. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n5. source_file: data/raw/html/langchain-runtime.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000667-c1b650b00b, url: https://docs.langchain.com/oss/python/langchain/runtime",
-      "answer_text": "Agents in LangChain are composable, customizable, and extensible components that can be combined to create a wide range of use cases. They consist of a model, tools, prompt, and middleware, which can be composed together using the `create_agent` function.",
+      "answer": "Answer:\nAgents in LangChain are a way to compose exactly the agent your use case needs from model, tools, prompt, and middleware. They can be created using the `create_agent` function, which provides a minimal, highly configurable harness. Agents support OpenAI, Anthropic, Google, and more.\n\nSources:\n\n1. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n2. source_file: data/raw/html/langchain-agents.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000640-48369a8954, url: https://docs.langchain.com/oss/python/langchain/agents\n3. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000754-389185d231, url: https://docs.langchain.com/oss/python/langchain/tools\n4. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n5. source_file: data/raw/html/langchain-runtime.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000667-c1b650b00b, url: https://docs.langchain.com/oss/python/langchain/runtime",
+      "answer_text": "Agents in LangChain are a way to compose exactly the agent your use case needs from model, tools, prompt, and middleware. They can be created using the `create_agent` function, which provides a minimal, highly configurable harness. Agents support OpenAI, Anthropic, Google, and more.",
       "sources": [
         {
           "source_file": "data/raw/html/langchain-overview.html",
@@ -891,11 +891,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.48,
+      "groundedness": 0.8125,
       "answer_contains_expected_keywords": false,
       "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 18.58207250000123,
-      "retrieval_latency_seconds": 1.9442705999972532,
+      "latency_seconds": 11.337610399998084,
+      "retrieval_latency_seconds": 2.7369012999988627,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -905,8 +905,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nTools in LangChain agents are Python callables, LangChain tools, or tool dicts that provide the agent with additional functionality.\n\nSources:\n\n1. source_file: data/raw/html/langchain-agents.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000631-deda9f440a, url: https://docs.langchain.com/oss/python/langchain/agents\n2. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n3. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n4. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000690-c2ff650a5b, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n5. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000756-d3ea3c5bf0, url: https://docs.langchain.com/oss/python/langchain/tools",
-      "answer_text": "Tools in LangChain agents are Python callables, LangChain tools, or tool dicts that provide the agent with additional functionality.",
+      "answer": "Answer:\nTools in LangChain agents are Python callables, LangChain tools, or tool dicts that provide the agent with additional functionality. They can be used to perform various tasks such as searching for information, accessing short-term memory, and filtering tools based on user preferences.\n\nSource file: data/raw/html/langchain-tools.html\nDocument source: LangChain\nDocument type: html\nYear: 2024\nDate: 2024-01-01\nPage: null\nChunk id: chunk-000756-d3ea3c5bf0\nURL: https://docs.langchain.com/oss/python/langchain/tools\n\nSources:\n\n1. source_file: data/raw/html/langchain-agents.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000631-deda9f440a, url: https://docs.langchain.com/oss/python/langchain/agents\n2. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000651-abb2827f8d, url: https://docs.langchain.com/oss/python/langchain/overview\n3. source_file: data/raw/html/langchain-overview.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000652-67956eda9e, url: https://docs.langchain.com/oss/python/langchain/overview\n4. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000690-c2ff650a5b, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n5. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000756-d3ea3c5bf0, url: https://docs.langchain.com/oss/python/langchain/tools",
+      "answer_text": "Tools in LangChain agents are Python callables, LangChain tools, or tool dicts that provide the agent with additional functionality. They can be used to perform various tasks such as searching for information, accessing short-term memory, and filtering tools based on user preferences.\n\nSource file: data/raw/html/langchain-tools.html\nDocument source: LangChain\nDocument type: html\nYear: 2024\nDate: 2024-01-01\nPage: null\nChunk id: chunk-000756-d3ea3c5bf0\nURL: https://docs.langchain.com/oss/python/langchain/tools",
       "sources": [
         {
           "source_file": "data/raw/html/langchain-agents.html",
@@ -965,11 +965,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.6363636363636364,
+      "groundedness": 0.3541666666666667,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 13.0498998999974,
-      "retrieval_latency_seconds": 1.948409399999946,
+      "latency_seconds": 13.697177999994892,
+      "retrieval_latency_seconds": 2.7881047999981092,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -979,8 +979,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nStructured output in LangChain is a feature that allows agents to return validated schema from the model, which can be used for various applications such as data validation and error handling.\n\nSources:\n\n1. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000703-1c22e21999, url: https://docs.langchain.com/oss/python/langchain/structured-output\n2. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000700-830478b89c, url: https://docs.langchain.com/oss/python/langchain/structured-output\n3. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000714-ee4e37aaff, url: https://docs.langchain.com/oss/python/langchain/structured-output\n4. source_file: data/raw/html/langchain-agents.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000632-ab5ae67ebe, url: https://docs.langchain.com/oss/python/langchain/agents\n5. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000708-346da98ff0, url: https://docs.langchain.com/oss/python/langchain/structured-output",
-      "answer_text": "Structured output in LangChain is a feature that allows agents to return validated schema from the model, which can be used for various applications such as data validation and error handling.",
+      "answer": "Answer:\nStructured output in LangChain refers to the ability of an agent to generate structured data, such as JSON or Python dictionaries, in response to a prompt. This is achieved through either native support from the model provider (e.g., OpenAI, xAI) or tool calling strategies.\n\nNative structured output provides high reliability and strict validation, but it requires the model provider to natively support structured output for the chosen model. If this is not available, LangChain uses tool calling strategies to achieve similar results.\n\nTool calling strategies involve configuring a ToolStrategy with a schema and tool message content. This allows the agent to call external tools to generate structured data, which is then validated and returned in the 'structured_response' key of the agent's state.\n\nSources:\n\n1. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000703-1c22e21999, url: https://docs.langchain.com/oss/python/langchain/structured-output\n2. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000700-830478b89c, url: https://docs.langchain.com/oss/python/langchain/structured-output\n3. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000714-ee4e37aaff, url: https://docs.langchain.com/oss/python/langchain/structured-output\n4. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000705-7760638e8b, url: https://docs.langchain.com/oss/python/langchain/structured-output\n5. source_file: data/raw/html/langchain-structured-output.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000708-346da98ff0, url: https://docs.langchain.com/oss/python/langchain/structured-output",
+      "answer_text": "Structured output in LangChain refers to the ability of an agent to generate structured data, such as JSON or Python dictionaries, in response to a prompt. This is achieved through either native support from the model provider (e.g., OpenAI, xAI) or tool calling strategies.\n\nNative structured output provides high reliability and strict validation, but it requires the model provider to natively support structured output for the chosen model. If this is not available, LangChain uses tool calling strategies to achieve similar results.\n\nTool calling strategies involve configuring a ToolStrategy with a schema and tool message content. This allows the agent to call external tools to generate structured data, which is then validated and returned in the 'structured_response' key of the agent's state.",
       "sources": [
         {
           "source_file": "data/raw/html/langchain-structured-output.html",
@@ -1016,15 +1016,15 @@
           "chunk_id": "chunk-000714-ee4e37aaff"
         },
         {
-          "source_file": "data/raw/html/langchain-agents.html",
-          "source_url": "https://docs.langchain.com/oss/python/langchain/agents",
+          "source_file": "data/raw/html/langchain-structured-output.html",
+          "source_url": "https://docs.langchain.com/oss/python/langchain/structured-output",
           "document_source": "LangChain",
           "document_type": "html",
           "document_year": 2024,
           "document_date": "2024-01-01",
           "page_number": null,
-          "section_title": "Agents - Docs by LangChain",
-          "chunk_id": "chunk-000632-ab5ae67ebe"
+          "section_title": "Structured output - Docs by LangChain",
+          "chunk_id": "chunk-000705-7760638e8b"
         },
         {
           "source_file": "data/raw/html/langchain-structured-output.html",
@@ -1039,11 +1039,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.6666666666666666,
+      "groundedness": 0.6101694915254238,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 14.880013800000597,
-      "retrieval_latency_seconds": 1.9330273999948986,
+      "latency_seconds": 16.51889960000699,
+      "retrieval_latency_seconds": 3.4116505999991205,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1053,8 +1053,8 @@
       "difficulty": "hard",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nShort-term memory in LangChain refers to the ability of an agent to store and access information for a specific conversation. It is used to maintain thread-level persistence, allowing the agent to recall previous conversations and maintain context.\n\nSources:\n\n1. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000734-b79eda40af, url: https://docs.langchain.com/oss/python/langchain/tools\n2. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000673-40a5c0d773, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n3. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000669-dda052e8f3, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n4. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000740-e525033617, url: https://docs.langchain.com/oss/python/langchain/tools\n5. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000690-c2ff650a5b, url: https://docs.langchain.com/oss/python/langchain/short-term-memory",
-      "answer_text": "Short-term memory in LangChain refers to the ability of an agent to store and access information for a specific conversation. It is used to maintain thread-level persistence, allowing the agent to recall previous conversations and maintain context.",
+      "answer": "Answer:\nShort-term memory in LangChain represents the conversation history and any custom fields that exist for the duration of a conversation. It can be accessed through the `runtime.state` parameter in tools, allowing agents to maintain context and persistence across steps.\n\nSources:\n\n1. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000734-b79eda40af, url: https://docs.langchain.com/oss/python/langchain/tools\n2. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000673-40a5c0d773, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n3. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000669-dda052e8f3, url: https://docs.langchain.com/oss/python/langchain/short-term-memory\n4. source_file: data/raw/html/langchain-tools.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000740-e525033617, url: https://docs.langchain.com/oss/python/langchain/tools\n5. source_file: data/raw/html/langchain-short-term-memory.html, document_source: LangChain, year: 2024, page: null, chunk_id: chunk-000690-c2ff650a5b, url: https://docs.langchain.com/oss/python/langchain/short-term-memory",
+      "answer_text": "Short-term memory in LangChain represents the conversation history and any custom fields that exist for the duration of a conversation. It can be accessed through the `runtime.state` parameter in tools, allowing agents to maintain context and persistence across steps.",
       "sources": [
         {
           "source_file": "data/raw/html/langchain-tools.html",
@@ -1113,11 +1113,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.5909090909090909,
-      "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 14.23351470000489,
-      "retrieval_latency_seconds": 2.02344009999797,
+      "groundedness": 0.8076923076923077,
+      "answer_contains_expected_keywords": true,
+      "answer_keyword_match_score": 1.0,
+      "latency_seconds": 11.171307600001455,
+      "retrieval_latency_seconds": 2.2899304999955348,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1127,8 +1127,8 @@
       "difficulty": "easy",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nThis tutorial introduces the reader informally to the basic concepts and features of the Python language and system, covering many of its commonly used features.\n\nSources:\n\n1. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001072-2c60c56093, url: https://docs.python.org/3/tutorial/index.html\n2. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001070-921e543ee4, url: https://docs.python.org/3/tutorial/index.html\n3. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001079-20de6ee216, url: https://docs.python.org/3/tutorial/index.html\n4. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001071-fb1303b675, url: https://docs.python.org/3/tutorial/index.html\n5. source_file: data/raw/pdf/python-docs-04-howto-a-conceptual-overview-of-asyncio.pdf, document_source: Python, year: 2025, page: 1, chunk_id: chunk-003200-6189283200, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
-      "answer_text": "This tutorial introduces the reader informally to the basic concepts and features of the Python language and system, covering many of its commonly used features.",
+      "answer": "Answer:\nThe Python tutorial covers an introduction to the basic concepts and features of the Python language and system, including data structures, object-oriented programming, and scripting. It also provides information on extending and embedding the Python interpreter, as well as using Python as an extension language for customizable applications.\n\nSources:\n\n1. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001072-2c60c56093, url: https://docs.python.org/3/tutorial/index.html\n2. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001070-921e543ee4, url: https://docs.python.org/3/tutorial/index.html\n3. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001079-20de6ee216, url: https://docs.python.org/3/tutorial/index.html\n4. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001071-fb1303b675, url: https://docs.python.org/3/tutorial/index.html\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001051-7a7333852b, url: https://docs.python.org/3/library/index.html",
+      "answer_text": "The Python tutorial covers an introduction to the basic concepts and features of the Python language and system, including data structures, object-oriented programming, and scripting. It also provides information on extending and embedding the Python interpreter, as well as using Python as an extension language for customizable applications.",
       "sources": [
         {
           "source_file": "data/raw/html/python-tutorial.html",
@@ -1175,23 +1175,23 @@
           "chunk_id": "chunk-001071-fb1303b675"
         },
         {
-          "source_file": "data/raw/pdf/python-docs-04-howto-a-conceptual-overview-of-asyncio.pdf",
-          "source_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+          "source_file": "data/raw/html/python-library.html",
+          "source_url": "https://docs.python.org/3/library/index.html",
           "document_source": "Python",
-          "document_type": "pdf",
+          "document_type": "html",
           "document_year": 2025,
           "document_date": "2025-01-01",
-          "page_number": 1,
-          "section_title": "python-docs-04-howto-a-conceptual-overview-of-asyncio",
-          "chunk_id": "chunk-003200-6189283200"
+          "page_number": null,
+          "section_title": "The Python Standard Library \u2014 Python 3.14.6 documentation",
+          "chunk_id": "chunk-001051-7a7333852b"
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 1.0,
+      "groundedness": 0.8518518518518519,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 9.87139689999458,
-      "retrieval_latency_seconds": 2.0029549000028055,
+      "latency_seconds": 10.286229100005585,
+      "retrieval_latency_seconds": 2.106018499995116,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1201,8 +1201,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nControl flow tools are a set of features in Python that allow you to control the flow of your program's execution. They include if statements, for loops, while loops, break and continue statements, else clauses on loops, pass statements, match statements, and more.\n\nSources:\n\n1. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001074-d7d63e2aa1, url: https://docs.python.org/3/tutorial/index.html\n2. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001058-51b74f16b1, url: https://docs.python.org/3/library/index.html\n3. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001065-24d758e0fe, url: https://docs.python.org/3/library/index.html\n4. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001067-207e436327, url: https://docs.python.org/3/library/index.html\n5. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001071-fb1303b675, url: https://docs.python.org/3/tutorial/index.html",
-      "answer_text": "Control flow tools are a set of features in Python that allow you to control the flow of your program's execution. They include if statements, for loops, while loops, break and continue statements, else clauses on loops, pass statements, match statements, and more.",
+      "answer": "Answer:\nBased on the tool output, Python control flow tools include:\n\n* if Statements (Section 4.1)\n* for Statements (Section 4.2)\n* The range() Function (Section 4.3)\n* break and continue Statements (Section 4.4)\n* else Clauses on Loops (Section 4.5)\n* pass Statements (Section 4.6)\n* match Statements (Section 4.7)\n\nSources:\n\n1. source_file: data/raw/html/python-tutorial.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001074-d7d63e2aa1, url: https://docs.python.org/3/tutorial/index.html\n2. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001058-51b74f16b1, url: https://docs.python.org/3/library/index.html\n3. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001065-24d758e0fe, url: https://docs.python.org/3/library/index.html\n4. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001067-207e436327, url: https://docs.python.org/3/library/index.html\n5. source_file: data/raw/pdf/python-docs-01-c-api.pdf, document_source: Python, year: 2025, page: 21, chunk_id: chunk-001154-b493319f55, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
+      "answer_text": "Based on the tool output, Python control flow tools include:\n\n* if Statements (Section 4.1)\n* for Statements (Section 4.2)\n* The range() Function (Section 4.3)\n* break and continue Statements (Section 4.4)\n* else Clauses on Loops (Section 4.5)\n* pass Statements (Section 4.6)\n* match Statements (Section 4.7)",
       "sources": [
         {
           "source_file": "data/raw/html/python-tutorial.html",
@@ -1249,23 +1249,23 @@
           "chunk_id": "chunk-001067-207e436327"
         },
         {
-          "source_file": "data/raw/html/python-tutorial.html",
-          "source_url": "https://docs.python.org/3/tutorial/index.html",
+          "source_file": "data/raw/pdf/python-docs-01-c-api.pdf",
+          "source_url": "https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip",
           "document_source": "Python",
-          "document_type": "html",
+          "document_type": "pdf",
           "document_year": 2025,
           "document_date": "2025-01-01",
-          "page_number": null,
-          "section_title": "The Python Tutorial \u2014 Python 3.14.6 documentation",
-          "chunk_id": "chunk-001071-fb1303b675"
+          "page_number": 21,
+          "section_title": "python-docs-01-c-api",
+          "chunk_id": "chunk-001154-b493319f55"
         }
       ],
       "source_recall_at_k": false,
-      "groundedness": 0.6521739130434783,
-      "answer_contains_expected_keywords": false,
-      "answer_keyword_match_score": 0.75,
-      "latency_seconds": 11.483485100005055,
-      "retrieval_latency_seconds": 1.952634000001126,
+      "groundedness": 0.7894736842105263,
+      "answer_contains_expected_keywords": true,
+      "answer_keyword_match_score": 1.0,
+      "latency_seconds": 13.320186099997954,
+      "retrieval_latency_seconds": 2.1370366999981343,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1275,8 +1275,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPython lists are used for storing collections of objects of different types, similar to C or Pascal arrays. They can be thought of as a small collection of related data which may be of different types and are operated on as a group.\n\nSources:\n\n1. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 52, chunk_id: chunk-002969-3ad396f876, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n2. source_file: data/raw/txt/python-tutorial-datastructures.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003400-f4c75ac0e1, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/datastructures.rst\n3. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 31, chunk_id: chunk-002909-22daf64d71, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-01-c-api.pdf, document_source: Python, year: 2025, page: 191, chunk_id: chunk-001660-79affe7602, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001051-7a7333852b, url: https://docs.python.org/3/library/index.html",
-      "answer_text": "Python lists are used for storing collections of objects of different types, similar to C or Pascal arrays. They can be thought of as a small collection of related data which may be of different types and are operated on as a group.",
+      "answer": "Answer:\nLists in Python are used for storing collections of items, similar to arrays or Pascal records. They can contain objects of different types and are often used when a sequence of elements is needed. Lists are equivalent to C or Pascal arrays in terms of time complexity but have the advantage of being able to contain objects of many different types.\n\nSources:\n\n1. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 52, chunk_id: chunk-002969-3ad396f876, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n2. source_file: data/raw/txt/python-tutorial-datastructures.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003400-f4c75ac0e1, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/datastructures.rst\n3. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 31, chunk_id: chunk-002909-22daf64d71, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-01-c-api.pdf, document_source: Python, year: 2025, page: 191, chunk_id: chunk-001660-79affe7602, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001051-7a7333852b, url: https://docs.python.org/3/library/index.html",
+      "answer_text": "Lists in Python are used for storing collections of items, similar to arrays or Pascal records. They can contain objects of different types and are often used when a sequence of elements is needed. Lists are equivalent to C or Pascal arrays in terms of time complexity but have the advantage of being able to contain objects of many different types.",
       "sources": [
         {
           "source_file": "data/raw/pdf/python-docs-03-faq.pdf",
@@ -1335,11 +1335,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.5909090909090909,
+      "groundedness": 0.5161290322580645,
       "answer_contains_expected_keywords": false,
       "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 16.07332630000019,
-      "retrieval_latency_seconds": 2.083739000001515,
+      "latency_seconds": 11.789562600002682,
+      "retrieval_latency_seconds": 2.213957100000698,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1349,8 +1349,8 @@
       "difficulty": "medium",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPython modules are used to structure Python's module namespace by using \"dotted module names\". They can be used to save authors from having to worry about each other's global variable names, and to provide new functions and types that can be used from Python. Extension modules can also be created in C or C++ to interface with the Python interpreter.\n\nSources:\n\n1. source_file: data/raw/txt/python-tutorial-modules.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003456-e9d56b26cf, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/modules.rst\n2. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 24, chunk_id: chunk-002524-dfe637dd17, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n3. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 9, chunk_id: chunk-002465-5b3613307e, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 15, chunk_id: chunk-002487-05518e20e7, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001066-5abc8ae2cc, url: https://docs.python.org/3/library/index.html",
-      "answer_text": "Python modules are used to structure Python's module namespace by using \"dotted module names\". They can be used to save authors from having to worry about each other's global variable names, and to provide new functions and types that can be used from Python. Extension modules can also be created in C or C++ to interface with the Python interpreter.",
+      "answer": "Answer:\nPython modules are used to structure the Python namespace by using \"dotted module names\". This allows authors of different modules to avoid worrying about each other's global variable names. Packages can be thought of as a way to group related modules together, making it easier to organize and manage code.\n\nSources:\n\n1. source_file: data/raw/txt/python-tutorial-modules.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003456-e9d56b26cf, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/modules.rst\n2. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 24, chunk_id: chunk-002524-dfe637dd17, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n3. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 9, chunk_id: chunk-002465-5b3613307e, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 15, chunk_id: chunk-002487-05518e20e7, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001066-5abc8ae2cc, url: https://docs.python.org/3/library/index.html",
+      "answer_text": "Python modules are used to structure the Python namespace by using \"dotted module names\". This allows authors of different modules to avoid worrying about each other's global variable names. Packages can be thought of as a way to group related modules together, making it easier to organize and manage code.",
       "sources": [
         {
           "source_file": "data/raw/txt/python-tutorial-modules.txt",
@@ -1409,11 +1409,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.8666666666666667,
+      "groundedness": 0.6451612903225806,
       "answer_contains_expected_keywords": false,
       "answer_keyword_match_score": 0.6666666666666666,
-      "latency_seconds": 13.599494199996116,
-      "retrieval_latency_seconds": 2.1606457000016235,
+      "latency_seconds": 11.35597539999435,
+      "retrieval_latency_seconds": 2.1052307999998447,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     },
@@ -1423,8 +1423,8 @@
       "difficulty": "hard",
       "retrieval_pipeline": "full_pipeline",
       "metadata_filter": {},
-      "answer": "Answer:\nPython classes are used to provide object-oriented programming features such as inheritance, polymorphism, and encapsulation. They can contain arbitrary amounts and kinds of data and methods that operate on that data.\n\nSources:\n\n1. source_file: data/raw/txt/python-tutorial-classes.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003276-357a9e2fef, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/classes.rst\n2. source_file: data/raw/pdf/python-docs-01-c-api.pdf, document_source: Python, year: 2025, page: 381, chunk_id: chunk-002245-01379285b1, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n3. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 91, chunk_id: chunk-003092-b32c62bffc, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 84, chunk_id: chunk-002706-179c6b5fb9, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001066-5abc8ae2cc, url: https://docs.python.org/3/library/index.html",
-      "answer_text": "Python classes are used to provide object-oriented programming features such as inheritance, polymorphism, and encapsulation. They can contain arbitrary amounts and kinds of data and methods that operate on that data.",
+      "answer": "Answer:\nPython classes are used to create objects with state (attributes or value) and defined behavior (methods). They can contain arbitrary amounts and kinds of data, and provide features such as inheritance, polymorphism, and encapsulation. Classes can be used to implement object-oriented programming concepts like singletons, logging attribute access, adding thread-safety, tracking object creation, and more.\n\nSources:\n\n1. source_file: data/raw/txt/python-tutorial-classes.txt, document_source: Python, year: 2025, page: null, chunk_id: chunk-003276-357a9e2fef, url: https://raw.githubusercontent.com/python/cpython/main/Doc/tutorial/classes.rst\n2. source_file: data/raw/pdf/python-docs-01-c-api.pdf, document_source: Python, year: 2025, page: 381, chunk_id: chunk-002245-01379285b1, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n3. source_file: data/raw/pdf/python-docs-03-faq.pdf, document_source: Python, year: 2025, page: 91, chunk_id: chunk-003092-b32c62bffc, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n4. source_file: data/raw/pdf/python-docs-02-extending.pdf, document_source: Python, year: 2025, page: 84, chunk_id: chunk-002706-179c6b5fb9, url: https://docs.python.org/3.14/archives/python-3.14-docs-pdf-a4.zip\n5. source_file: data/raw/html/python-library.html, document_source: Python, year: 2025, page: null, chunk_id: chunk-001066-5abc8ae2cc, url: https://docs.python.org/3/library/index.html",
+      "answer_text": "Python classes are used to create objects with state (attributes or value) and defined behavior (methods). They can contain arbitrary amounts and kinds of data, and provide features such as inheritance, polymorphism, and encapsulation. Classes can be used to implement object-oriented programming concepts like singletons, logging attribute access, adding thread-safety, tracking object creation, and more.",
       "sources": [
         {
           "source_file": "data/raw/txt/python-tutorial-classes.txt",
@@ -1483,11 +1483,11 @@
         }
       ],
       "source_recall_at_k": true,
-      "groundedness": 0.8095238095238095,
+      "groundedness": 0.825,
       "answer_contains_expected_keywords": true,
       "answer_keyword_match_score": 1.0,
-      "latency_seconds": 15.23903390000487,
-      "retrieval_latency_seconds": 1.903320099998382,
+      "latency_seconds": 14.58070299999963,
+      "retrieval_latency_seconds": 2.31438199999684,
       "number_of_retrieved_chunks": 5,
       "failure_reason": ""
     }
