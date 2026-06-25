@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import math
 import re
+from functools import lru_cache
 from typing import Any
 
 from config import Settings, get_settings
@@ -15,29 +16,30 @@ def rerank_chunks(
     question: str,
     chunks: list[RetrievedChunk],
     settings: Settings | None = None,
+    top_n: int | None = None,
 ) -> list[RetrievedChunk]:
     settings = settings or get_settings()
     if not chunks:
         return []
 
+    final_top_n = top_n or settings.rerank_top_n
     provider = settings.reranker_provider.lower()
     if provider in {"auto", "cross_encoder"}:
         try:
-            return cross_encoder_rerank(question, chunks, settings)
+            return cross_encoder_rerank(question, chunks, settings, top_n=final_top_n)
         except Exception as exc:
             print(f"Cross-encoder rerank unavailable, using lexical fallback: {exc}")
 
-    return lexical_rerank(question, chunks, top_n=settings.rerank_top_n)
+    return lexical_rerank(question, chunks, top_n=final_top_n)
 
 
 def cross_encoder_rerank(
     question: str,
     chunks: list[RetrievedChunk],
     settings: Settings,
+    top_n: int,
 ) -> list[RetrievedChunk]:
-    from sentence_transformers import CrossEncoder
-
-    model = CrossEncoder(settings.cross_encoder_model)
+    model = get_cross_encoder(settings.cross_encoder_model)
     pairs = [(question, str(chunk.get("text", ""))) for chunk in chunks]
     scores = model.predict(pairs)
 
@@ -49,7 +51,14 @@ def cross_encoder_rerank(
         scored.append(updated)
 
     scored.sort(key=lambda item: float(item.get("rerank_score", 0.0)), reverse=True)
-    return _with_ranks(scored[: settings.rerank_top_n])
+    return _with_ranks(scored[:top_n])
+
+
+@lru_cache(maxsize=1)
+def get_cross_encoder(model_name: str) -> Any:
+    from sentence_transformers import CrossEncoder
+
+    return CrossEncoder(model_name)
 
 
 def lexical_rerank(

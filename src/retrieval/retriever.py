@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 from functools import lru_cache
 from typing import Any
@@ -12,6 +13,9 @@ from ingestion.metadata import metadata_to_source
 
 
 RetrievedChunk = dict[str, Any]
+PIPELINE_NAME = "full_pipeline"
+PIPELINE_STEPS = "query_rewrite -> metadata_filter -> hybrid -> rerank"
+YEAR_RE = re.compile(r"\b(?:19|20)\d{2}\b")
 
 
 @lru_cache(maxsize=1)
@@ -71,10 +75,13 @@ def clean_metadata_filter(metadata_filter: dict[str, Any] | None) -> dict[str, A
     for key, value in metadata_filter.items():
         if value is None or value == "":
             continue
-        if key == "page_number" and isinstance(value, str) and value.isdigit():
-            clean[key] = int(value)
+        normalized_key = "document_year" if key == "year" else key
+        if normalized_key in {"page_number", "document_year"} and isinstance(
+            value, str
+        ) and value.isdigit():
+            clean[normalized_key] = int(value)
         else:
-            clean[key] = value
+            clean[normalized_key] = value
     return clean
 
 
@@ -169,6 +176,8 @@ def result_from_document(
         "source_url": source["source_url"],
         "document_source": source["document_source"],
         "document_type": source["document_type"],
+        "document_year": source["document_year"],
+        "document_date": source["document_date"],
         "page_number": source["page_number"],
         "section_title": source["section_title"],
         "chunk_id": source["chunk_id"],
@@ -177,70 +186,61 @@ def result_from_document(
 
 def retrieve_chunks(
     question: str,
-    retrieval_mode: str = "similarity",
     settings: Settings | None = None,
     metadata_filter: dict[str, Any] | None = None,
 ) -> list[RetrievedChunk]:
     settings = settings or get_settings()
-    mode = retrieval_mode.lower()
 
-    if mode == "hybrid":
-        from retrieval.hybrid_retriever import hybrid_search
+    from retrieval.hybrid_retriever import hybrid_search
+    from retrieval.query_rewriter import rewrite_query
+    from retrieval.reranker import rerank_chunks
 
-        return hybrid_search(question, settings=settings, metadata_filter=metadata_filter)
+    rewritten_query = rewrite_query(question, settings=settings)
+    effective_filter = merge_question_metadata_filter(question, metadata_filter)
+    candidate_count = max(settings.top_k * 4, settings.rerank_top_n * 4, 10)
 
-    if mode == "metadata_filter":
-        return similarity_search(
-            question,
-            settings=settings,
-            top_k=settings.top_k,
-            metadata_filter=metadata_filter,
-        )
-
-    if mode == "query_rewrite":
-        from retrieval.query_rewriter import rewrite_query
-
-        rewritten_query = rewrite_query(question, settings=settings)
-        results = similarity_search(
-            rewritten_query,
-            settings=settings,
-            top_k=settings.top_k,
-            metadata_filter=metadata_filter,
-        )
-        for result in results:
-            result["query_used"] = rewritten_query
-        return results
-
-    if mode == "rerank":
-        from retrieval.reranker import rerank_chunks
-
-        candidate_count = max(settings.top_k * 4, settings.rerank_top_n * 4, 10)
-        candidates = similarity_search(
-            question,
-            settings=settings,
-            top_k=candidate_count,
-            metadata_filter=metadata_filter,
-        )
-        return rerank_chunks(question, candidates, settings=settings)
-
-    return similarity_search(
-        question,
+    candidates = hybrid_search(
+        rewritten_query,
         settings=settings,
-        top_k=settings.top_k,
-        metadata_filter=metadata_filter,
+        metadata_filter=effective_filter,
+        top_k=candidate_count,
     )
+    results = rerank_chunks(
+        question,
+        candidates,
+        settings=settings,
+        top_n=settings.top_k,
+    )
+
+    for result in results:
+        result["query_used"] = rewritten_query
+        result["retrieval_pipeline"] = PIPELINE_NAME
+        result["metadata_filter_used"] = effective_filter or {}
+    return results
+
+
+def merge_question_metadata_filter(
+    question: str,
+    metadata_filter: dict[str, Any] | None,
+) -> dict[str, Any]:
+    clean = clean_metadata_filter(metadata_filter)
+    if "document_year" in clean:
+        return clean
+
+    match = YEAR_RE.search(question)
+    if match:
+        clean["document_year"] = int(match.group(0))
+    return clean
 
 
 def timed_retrieve(
     question: str,
-    retrieval_mode: str = "similarity",
     settings: Settings | None = None,
     metadata_filter: dict[str, Any] | None = None,
 ) -> tuple[list[RetrievedChunk], float]:
     start = time.perf_counter()
     chunks = retrieve_chunks(
         question,
-        retrieval_mode=retrieval_mode,
         settings=settings,
         metadata_filter=metadata_filter,
     )
@@ -252,6 +252,8 @@ def available_filter_options(settings: Settings | None = None) -> dict[str, list
     options: dict[str, set[Any]] = {
         "document_source": set(),
         "document_type": set(),
+        "document_year": set(),
+        "document_date": set(),
         "source_file": set(),
         "page_number": set(),
     }

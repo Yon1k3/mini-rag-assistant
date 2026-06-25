@@ -9,7 +9,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from answering.llm import get_chat_model
 from answering.prompts import RAG_HUMAN_PROMPT, SYSTEM_PROMPT
 from config import Settings, get_settings
-from retrieval.retriever import RetrievedChunk, timed_retrieve
+from retrieval.retriever import PIPELINE_NAME, RetrievedChunk, timed_retrieve
 
 
 DONT_KNOW = "I don't know based on the provided context."
@@ -17,7 +17,6 @@ DONT_KNOW = "I don't know based on the provided context."
 
 def answer_question(
     question: str,
-    retrieval_mode: str = "similarity",
     metadata_filter: dict[str, Any] | None = None,
     settings: Settings | None = None,
 ) -> dict[str, Any]:
@@ -28,7 +27,6 @@ def answer_question(
     try:
         retrieved_chunks, retrieval_latency = timed_retrieve(
             question,
-            retrieval_mode=retrieval_mode,
             settings=settings,
             metadata_filter=metadata_filter,
         )
@@ -46,7 +44,7 @@ def answer_question(
             "retrieved_context": [],
             "latency_seconds": latency,
             "retrieval_latency_seconds": retrieval_latency,
-            "retrieval_mode": retrieval_mode,
+            "retrieval_pipeline": PIPELINE_NAME,
             "failure_reason": failure_reason or "no_context",
         }
 
@@ -75,7 +73,7 @@ def answer_question(
         "retrieved_context": retrieved_chunks,
         "latency_seconds": latency,
         "retrieval_latency_seconds": retrieval_latency,
-        "retrieval_mode": retrieval_mode,
+        "retrieval_pipeline": PIPELINE_NAME,
         "failure_reason": failure_reason,
     }
 
@@ -92,6 +90,8 @@ def build_context(chunks: list[RetrievedChunk]) -> str:
                     f"source_file: {chunk.get('source_file', '')}",
                     f"document_source: {chunk.get('document_source', '')}",
                     f"document_type: {chunk.get('document_type', '')}",
+                    f"document_year: {chunk.get('document_year', '')}",
+                    f"document_date: {chunk.get('document_date', '')}",
                     f"page: {page_display}",
                     f"chunk_id: {chunk.get('chunk_id', '')}",
                     f"url: {chunk.get('source_url', '')}",
@@ -117,6 +117,8 @@ def collect_sources(chunks: list[RetrievedChunk]) -> list[dict[str, Any]]:
                 "source_url": chunk.get("source_url", ""),
                 "document_source": chunk.get("document_source", ""),
                 "document_type": chunk.get("document_type", ""),
+                "document_year": chunk.get("document_year"),
+                "document_date": chunk.get("document_date", ""),
                 "page_number": chunk.get("page_number"),
                 "section_title": chunk.get("section_title", ""),
                 "chunk_id": chunk.get("chunk_id", ""),
@@ -145,6 +147,7 @@ def format_final_answer(answer_text: str, sources: list[dict[str, Any]]) -> str:
         source_lines.append(
             f"{index}. source_file: {source.get('source_file', '')}, "
             f"document_source: {source.get('document_source', '')}, "
+            f"year: {source.get('document_year', '')}, "
             f"page: {page_display}, "
             f"chunk_id: {source.get('chunk_id', '')}, "
             f"url: {source.get('source_url', '')}"

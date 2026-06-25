@@ -24,44 +24,43 @@ def main() -> None:
     options = available_filter_options(settings)
 
     with st.sidebar:
-        retrieval_mode = st.selectbox(
-            "Режим пошуку",
-            ["similarity", "hybrid", "metadata_filter", "query_rewrite", "rerank"],
-            index=1,
-        )
+        st.subheader("Metadata filters")
         metadata_filter = render_metadata_filters(options)
 
-    question = st.text_input("Питання", placeholder="How do I declare a path parameter?")
-    ask = st.button("Запитати", type="primary")
+    question = st.text_input(
+        "Question",
+        placeholder="Give me a FastAPI answer from 2022",
+    )
+    ask = st.button("Ask", type="primary")
 
     if ask:
         if not question.strip():
-            st.warning("Введи питання.")
+            st.warning("Enter a question.")
             return
 
-        with st.spinner("Шукаю контекст і генерую відповідь..."):
+        with st.spinner("Searching context and generating answer..."):
             result = answer_question(
                 question.strip(),
-                retrieval_mode=retrieval_mode,
                 metadata_filter=metadata_filter,
                 settings=settings,
             )
 
         if not result["retrieved_context"]:
-            st.warning("Контекст не знайдено.")
+            st.warning("Context was not found.")
 
         st.markdown(result["answer"])
         st.caption(f"Latency: {result['latency_seconds']:.3f}s")
+        st.caption(f"Pipeline: {result['retrieval_pipeline']}")
 
         if result.get("failure_reason"):
             st.warning(result["failure_reason"])
 
         if result["sources"]:
-            st.subheader("Джерела")
+            st.subheader("Sources")
             st.dataframe(result["sources"], use_container_width=True)
 
         if result["retrieved_context"]:
-            st.subheader("Знайдені chunks")
+            st.subheader("Retrieved chunks")
             for index, chunk in enumerate(result["retrieved_context"], start=1):
                 label = (
                     f"{index}. {chunk.get('source_file', '')} "
@@ -76,30 +75,42 @@ def render_metadata_filters(options: dict[str, list[Any]]) -> dict[str, Any]:
     metadata_filter: dict[str, Any] = {}
 
     document_source = st.selectbox(
-        "Джерело документа",
+        "Document source",
         [""] + [str(value) for value in options.get("document_source", [])],
     )
     document_type = st.selectbox(
-        "Тип документа",
+        "Document type",
         [""] + [str(value) for value in options.get("document_type", [])],
     )
+    document_year = st.selectbox(
+        "Document year",
+        [""] + [str(value) for value in options.get("document_year", [])],
+    )
+    document_date = st.selectbox(
+        "Document date",
+        [""] + [str(value) for value in options.get("document_date", [])],
+    )
     source_file = st.selectbox(
-        "Файл джерела",
+        "Source file",
         [""] + [str(value) for value in options.get("source_file", [])],
     )
-    page_number = st.text_input("Номер сторінки PDF")
+    page_number = st.text_input("PDF page number")
 
     if document_source:
         metadata_filter["document_source"] = document_source
     if document_type:
         metadata_filter["document_type"] = document_type
+    if document_year:
+        metadata_filter["document_year"] = int(document_year)
+    if document_date:
+        metadata_filter["document_date"] = document_date
     if source_file:
         metadata_filter["source_file"] = source_file
     if page_number.strip():
         try:
             metadata_filter["page_number"] = int(page_number.strip())
         except ValueError:
-            st.warning("Номер сторінки PDF має бути цілим числом.")
+            st.warning("PDF page number must be an integer.")
 
     return metadata_filter
 

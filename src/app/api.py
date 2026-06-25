@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
-from typing import Any, Literal
+from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SRC_DIR = PROJECT_ROOT / "src"
@@ -16,20 +16,11 @@ from answering.rag_chain import answer_question
 from config import get_settings
 
 
-RetrievalMode = Literal[
-    "similarity",
-    "hybrid",
-    "metadata_filter",
-    "query_rewrite",
-    "rerank",
-]
-
 app = FastAPI(title="Mini RAG Assistant API", version="1.0.0")
 
 
 class AskRequest(BaseModel):
     question: str = Field(min_length=1)
-    retrieval_mode: RetrievalMode = "hybrid"
     metadata_filter: dict[str, Any] | None = None
 
 
@@ -40,7 +31,7 @@ class AskResponse(BaseModel):
     retrieved_context: list[dict[str, Any]]
     latency_seconds: float
     retrieval_latency_seconds: float
-    retrieval_mode: str
+    retrieval_pipeline: str
     failure_reason: str
 
 
@@ -49,7 +40,6 @@ def ask(request: AskRequest) -> AskResponse:
     settings = get_settings()
     result = answer_question(
         request.question.strip(),
-        retrieval_mode=request.retrieval_mode,
         metadata_filter=request.metadata_filter,
         settings=settings,
     )
