@@ -12,7 +12,7 @@ def load_source_metadata(settings: Settings | None = None) -> dict[str, dict[str
     if not settings.source_metadata_path.exists():
         return {}
 
-    raw = json.loads(settings.source_metadata_path.read_text(encoding="utf-8"))
+    raw = json.loads(settings.source_metadata_path.read_text(encoding="utf-8-sig"))
     records = raw if isinstance(raw, list) else raw.get("documents", [])
 
     catalog: dict[str, dict[str, Any]] = {}
@@ -28,12 +28,30 @@ def load_source_metadata(settings: Settings | None = None) -> dict[str, dict[str
 def metadata_for_file(path: Path, catalog: dict[str, dict[str, Any]]) -> dict[str, Any]:
     record = catalog.get(str(path.resolve()), {})
     document_type = record.get("document_type") or infer_document_type(path)
-    return {
+    metadata = {
         "source_file": record.get("local_path") or project_relative(path),
         "source_url": record.get("original_url", ""),
         "document_source": record.get("document_source", "Manual"),
         "document_type": document_type,
     }
+    for key in ("document_date", "download_timestamp"):
+        if record.get(key):
+            metadata[key] = record[key]
+
+    document_year = record.get("document_year") or record.get("year")
+    if document_year is None:
+        document_year = year_from_date(record.get("document_date", ""))
+    if document_year is not None:
+        metadata["document_year"] = int(document_year)
+
+    return metadata
+
+
+def year_from_date(value: str) -> int | None:
+    if not value or len(value) < 4:
+        return None
+    year = value[:4]
+    return int(year) if year.isdigit() else None
 
 
 def infer_document_type(path: Path) -> str:
@@ -72,6 +90,8 @@ def metadata_to_source(metadata: dict[str, Any]) -> dict[str, Any]:
         "source_url": metadata.get("source_url", ""),
         "document_source": metadata.get("document_source", ""),
         "document_type": metadata.get("document_type", ""),
+        "document_year": metadata.get("document_year"),
+        "document_date": metadata.get("document_date", ""),
         "page_number": page_number,
         "section_title": metadata.get("section_title", ""),
         "chunk_id": metadata.get("chunk_id", ""),
