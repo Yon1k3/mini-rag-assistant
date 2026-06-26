@@ -105,20 +105,6 @@ class RAGAgent:
         self._prepare_run(metadata_filter)
         return self.agent.invoke({"messages": [HumanMessage(content=query)]}, config=config)
 
-    def stream(
-        self,
-        query: str,
-        config: dict[str, Any],
-        metadata_filter: dict[str, Any] | None = None,
-    ) -> None:
-        self._prepare_run(metadata_filter)
-        for step in self.agent.stream({"messages": [HumanMessage(content=query)]}, config=config):
-            for node_name, state_update in step.items():
-                print(f"\n--- [Node: {node_name}] ---")
-                messages = state_update.get("messages", [])
-                if messages:
-                    print_stream_message(messages[-1])
-
     def _prepare_run(self, metadata_filter: dict[str, Any] | None) -> None:
         self.ui_filter = metadata_to_filter(metadata_filter)
         self.last_tool_payload = make_payload(failure_reason="tool_not_called")
@@ -189,7 +175,7 @@ def answer_question(
     )
 
 
-@lru_cache(maxsize=1)
+
 def get_rag_agent(settings: Settings) -> RAGAgent:
     return RAGAgent(settings=settings)
 
@@ -290,14 +276,6 @@ def latest_message_content(state: dict[str, Any]) -> str:
         if content:
             return message_content_to_text(content)
     return ""
-
-
-def print_stream_message(message: Any) -> None:
-    tool_calls = getattr(message, "tool_calls", None)
-    if tool_calls:
-        print(f"Agent called: {tool_calls[0]['name']}")
-    elif getattr(message, "content", None):
-        print(f"Message: {message_content_to_text(message.content)}")
 
 
 def message_content_to_text(content: Any) -> str:
